@@ -8,17 +8,21 @@ use app\models\NewsSearche;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use app\models\UploadForm;
 use yii\web\UploadedFile;
+use yii\imagine\Image;
+
 
 /**
  * NewsController implements the CRUD actions for News model.
  */
 class NewsController extends AppAdminController
 {
+
     /**
      * {@inheritdoc}
      */
-    /*public function behaviors()
+    public function behaviors()
     {
         return [
             'verbs' => [
@@ -28,7 +32,7 @@ class NewsController extends AppAdminController
                 ],
             ],
         ];
-    }*/
+    }
 
     /**
      * Lists all News models.
@@ -95,7 +99,8 @@ class NewsController extends AppAdminController
              {
                 $model->upload();          
              }
-            return $this->redirect(['view', 'id' => $model->id]);
+           // var_dump($_FILES);
+              return $this->redirect(['view', 'id' => $model->id]);
         }
         else
         {

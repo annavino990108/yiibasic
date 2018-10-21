@@ -3,6 +3,7 @@
 use yii\helpers\Html;
 use yii\widgets\DetailView;
 use app\models\UploadForm;
+use yii\imagine\Image;
 
 
 /* @var $this yii\web\View */
@@ -26,18 +27,21 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
         ]) ?>
     </p>
-    <?php// $img=$model->getImage();?>
+    <?php $img=$model->getImage();?>
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
             'id',
             'title',
-            'content:ntext',
-            'imageFile',
-            /*[
-                'attributes'=>'imageFile',
+            [
+                'attribute'=> 'content',
+                'format'=>'html',
+            ],
+            [
+                'attribute'=>'imageFile',
                 'value'=>"<img src='{$img->getUrl()}'>",
-            ],*/
+                'format'=>'html',
+            ],
             'file',
             'date',
         ],

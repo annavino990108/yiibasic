@@ -5,7 +5,7 @@ namespace app\models;
 use Yii;
 use yii\base\Model;
 use yii\web\UploadedFile;
-
+use yii\imagine\Image;
 /**
  * This is the model class for table "news".
  *
@@ -18,6 +18,9 @@ use yii\web\UploadedFile;
  */
 class News extends \yii\db\ActiveRecord
 {
+  /**
+     * @var UploadedFile
+     */
     public $imageFile;
       public function behaviors()
     {
@@ -46,8 +49,8 @@ class News extends \yii\db\ActiveRecord
           [['title','content'],'string'],
           [['date'],'date','format'=>'php:Y-m-d'],
           [['date'],'default','value'=>date('Y-m-d')],
-          [['title','image','file'],'string','max'=>255],
-          [['imageFile'], 'file', 'extensions' => 'png, jpg', 'maxFiles' => 4],
+          [['title','file'],'string','max'=>255],
+          [['imageFile'], 'file','skipOnEmpty' => true, 'extensions' => 'png, jpg'],
         ];
     }
 
