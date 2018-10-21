@@ -64,7 +64,7 @@ $config = [
             'imagesStorePath' => 'upload/store', //path to origin images
             'imagesCachePath' => 'upload/cache', //path to resized copies
             'graphicsLibrary' => 'GD', //but really its better to use 'Imagick' 
-            'placeHolderPath' => '@webroot/upload/no-images.png', // if you want to get placeholder when image not exists, string will be processed by Yii::getAlias
+            'placeHolderPath' => '@webroot/upload/store/no-images.png', // if you want to get placeholder when image not exists, string will be processed by Yii::getAlias
             'imageCompressionQuality' => 100, // Optional. Default value is 85.
         ],
     ],

@@ -76,11 +76,11 @@ class News extends \yii\db\ActiveRecord
             $path='upload/store/' . $this->imageFile->baseName . '.' . $this->imageFile->extension;
             $this->imageFile->saveAs($path);
            $this->attachImage($path);
-            //@unlink($path);
+            @unlink($path);
             return true;
         } else {
             return false;
         }
     }
-    
+
 }
