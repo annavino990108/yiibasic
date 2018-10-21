@@ -50,7 +50,7 @@ class News extends \yii\db\ActiveRecord
           [['date'],'date','format'=>'php:Y-m-d'],
           [['date'],'default','value'=>date('Y-m-d')],
           [['title','file'],'string','max'=>255],
-          [['imageFile'], 'file','skipOnEmpty' => true, 'extensions' => 'png, jpg'],
+          [['imageFile'], 'file', 'extensions' => 'png, jpg,jpeg'],
         ];
     }
 
@@ -75,10 +75,12 @@ class News extends \yii\db\ActiveRecord
         if ($this->validate()) {
             $path='upload/store/' . $this->imageFile->baseName . '.' . $this->imageFile->extension;
             $this->imageFile->saveAs($path);
-            $this->attachImage($path);
+           $this->attachImage($path);
+            //@unlink($path);
             return true;
         } else {
             return false;
         }
     }
+    
 }

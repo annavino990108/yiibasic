@@ -73,6 +73,11 @@ class NewsController extends AppAdminController
 
         if ($model->load(Yii::$app->request->post()) && $model->save())
         {
+                 $model->imageFile = UploadedFile::getInstance($model, 'imageFile');
+            if ($model->imageFile)
+             {
+                $model->upload();          
+             }
             return $this->redirect(['view', 'id' => $model->id]);
         }
 

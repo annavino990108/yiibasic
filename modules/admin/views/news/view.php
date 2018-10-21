@@ -27,6 +27,7 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
         ]) ?>
     </p>
+
     <?php $img=$model->getImage();?>
     <?= DetailView::widget([
         'model' => $model,
