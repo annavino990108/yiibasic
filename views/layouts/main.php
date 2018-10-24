@@ -34,19 +34,24 @@ AppAsset::register($this);
     <div class="container center" style="background-color: #FFFFFF;">
     <div class="row" style="background-color:#F8F9FA;text-align: center; padding-top: 15px; ">
       <div class="col">
-          <img src="https://media.fulledu.ru/firms/covers/2018.04.21.01/thumbnail/100040000000000000027262.png" width="60" height="60" alt="">
+          <img src="/images/logo.png" width="60" height="60" alt="">
       </div>
       <div class="col">
-        <img src="/images/icon-adress.png">Адрес
+        <img src="/images/icon-adress.png">просп. Текстильщиков, 73, Кострома
       </div>
       <div class="col">
-        <img src="/images/icon-phone.png">Телефон
+        <img src="/images/icon-phone.png">(4942)315191
       </div>
       <div class="col">
-        <img src="/images/icon-email.png">e-mail
+        <img src="/images/icon-email.png">spo-ket@mail.ru
       </div>
       <div class="col">
-        <img src="/images/icon-enter.png">Login
+        <img src="/images/icon-enter.png">
+        <?php echo Nav::widget(['items' => [Yii::$app->user->isGuest ? (
+                ['label' => 'Login', 'url' => ['/admin']]
+            ) : (
+                ['label' => 'Admin', 'url' => ['/admin']]
+            )],])?>
       </div>
     </div>
 
