@@ -13,30 +13,58 @@ use app\assets\AppAsset;
 AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
-<!DOCTYPE html>
+<!doctype html>
 <html lang="<?= Yii::$app->language ?>">
-<head>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
     <meta charset="<?= Yii::$app->charset ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <?= Html::csrfMetaTags() ?>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="media.css"
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
-</head>
-<body>
-<?php $this->beginBody() ?>
+  </head>
+  <body style="background-color:#F8F9FB ">
+    <?php $this->beginBody() ?>
+    <div class="container center" style="background-color: #FFFFFF;">
+    <div class="row" style="background-color:#F8F9FA;text-align: center; padding-top: 15px; ">
+      <div class="col">
+          <img src="https://media.fulledu.ru/firms/covers/2018.04.21.01/thumbnail/100040000000000000027262.png" width="60" height="60" alt="">
+      </div>
+      <div class="col">
+        <img src="/images/icon-adress.png">Адрес
+      </div>
+      <div class="col">
+        <img src="/images/icon-phone.png">Телефон
+      </div>
+      <div class="col">
+        <img src="/images/icon-email.png">e-mail
+      </div>
+      <div class="col">
+        <img src="/images/icon-enter.png">Login
+      </div>
+    </div>
 
-<div class="wrap">
-    <?php
+    <div class="conteiner" style="text-align: center;padding-top: 20px;padding-bottom: 20px; font-size: 50px; color: #282C95;">
+      Костромской энергетический<br/>техникум имени Ф.В.Чижова
+    </div>
+
+ <?php
     NavBar::begin([
         'brandLabel' => Yii::$app->name,
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
-            'class' => 'navbar-inverse navbar-fixed-top',
+            'class' => 'navbar navbar-expand-lg navbar-light bg-light',
         ],
     ]);
     echo Nav::widget([
-        'options' => ['class' => 'navbar-nav navbar-right'],
+        'options' => ['class' => 'navbar-nav navbar-right',
+        'style'=>'font-size:15px;'],
         'items' => [
             ['label' => 'Home', 'url' => ['/site/index']],
             ['label' => 'About', 'url' => ['/site/about']],
@@ -50,7 +78,8 @@ AppAsset::register($this);
     ]);
     NavBar::end();
     ?>
-
+<div style="text-align: justify;padding-top:50px ">
+<h2>Заголовок</h2>
     <div class="container">
         <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
@@ -59,16 +88,60 @@ AppAsset::register($this);
         <?= $content ?>
     </div>
 </div>
-
-<footer class="footer">
-    <div class="container">
-        <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
-
-        <p class="pull-right"><?= Yii::powered() ?></p>
+<hr/>
+  <div class="card">
+    <div class="card-header">
+      Дата
     </div>
-</footer>
-
-<?php $this->endBody() ?>
-</body>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-4">
+               <img class="card-img-top" src=".../100px180/" alt="Card image cap" style="width: 280px;height: 180px;">
+             </div>
+                  <div class="col-6">
+                  <h5 class="card-title">Заголовок</h5>
+                  <p class="card-text">Текст</p>
+                  <a href="#" class="btn btn-primary">Подробнее...</a>
+             </div>
+      </div>
+    </div>
+</div>
+  <div class="card">
+    <div class="card-header">
+      Дата
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-4">
+               <img class="card-img-top" src=".../100px180/" alt="Card image cap" style="width: 280px;height: 180px;">
+             </div>
+                  <div class="col-6">
+                  <h5 class="card-title">Заголовок</h5>
+                  <p class="card-text">Текст</p>
+                  <a href="#" class="btn btn-primary">Подробнее...</a>
+             </div>
+      </div>
+    </div>
+</div>
+<hr/>
+  <div class="row">
+    <div class="col">
+      <iframe  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2127.4134529978965!2d40.90658291514439!3d57.77735954151051!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46ad45559d8c1e57%3A0xb8351ea7ed1b1eaf!2z0JrQvtGB0YLRgNC-0LzRgdC60L7QuSDRjdC90LXRgNCz0LXRgtC40YfQtdGB0LrQuNC5INGC0LXRhdC90LjQutGD0Lwg0LjQvC4g0KQu0JIu0KfQuNC20L7QstCw!5e0!3m2!1sru!2sru!4v1540233377127" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+    </div>
+    <div class="col">
+    </div>
+  </div>
+  <hr/>
+  <div style="text-align: center;">
+    2018
+  </div>
+</div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script  src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <?php $this->endBody() ?>
+  </body>
 </html>
 <?php $this->endPage() ?>
