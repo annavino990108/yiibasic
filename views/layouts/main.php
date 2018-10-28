@@ -31,6 +31,7 @@ AppAsset::register($this);
   </head>
   <body style="background-color:#F8F9FB ">
     <?php $this->beginBody() ?>
+
     <div class="container center" style="background-color: #FFFFFF;">
     <div class="row" style="background-color:#F8F9FA;text-align: center; padding-top: 15px; ">
       <div class="col">
@@ -43,17 +44,21 @@ AppAsset::register($this);
         <img src="/images/icon-phone.png">(4942)315191
       </div>
       <div class="col">
-        <img src="/images/icon-email.png">spo-ket@mail.ru
+        <img src="/images/icon-email.png"> spo-ket@mail.ru
       </div>
       <div class="col">
-        <img src="/images/icon-enter.png">
+        <img src="/images/icon-enter.png" style="float: right;">
+      </div>
+        <div class="col" style="font-size: 20px;">
         <?php echo Nav::widget(['items' => [Yii::$app->user->isGuest ? (
                 ['label' => 'Login', 'url' => ['/admin']]
             ) : (
                 ['label' => 'Admin', 'url' => ['/admin']]
             )],])?>
+          
       </div>
     </div>
+
 
     <div class="conteiner" style="text-align: center;padding-top: 20px;padding-bottom: 20px; font-size: 50px; color: #282C95;">
       Костромской энергетический<br/>техникум имени Ф.В.Чижова
@@ -61,8 +66,8 @@ AppAsset::register($this);
 
  <?php
     NavBar::begin([
-        'brandLabel' => Yii::$app->name,
-        'brandUrl' => Yii::$app->homeUrl,
+       // 'brandLabel' => Yii::$app->name,
+       // 'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar navbar-expand-lg navbar-light bg-light',
         ],
@@ -74,15 +79,13 @@ AppAsset::register($this);
             ['label' => 'Home', 'url' => ['/site/index']],
             ['label' => 'About', 'url' => ['/site/about']],
             ['label' => 'Contact', 'url' => ['/site/contact']],
-            Yii::$app->user->isGuest ? (
-                ['label' => 'Login', 'url' => ['/admin']]
-            ) : (
-                ['label' => 'Admin', 'url' => ['/admin']]
-            )
         ],
     ]);
     NavBar::end();
     ?>
+
+      <?=\app\components\MenuWidget::widget(['tpl'=>'menu'])?>
+
 <div style="text-align: justify;padding-top:50px ">
 <h2>Заголовок</h2>
     <div class="container">
