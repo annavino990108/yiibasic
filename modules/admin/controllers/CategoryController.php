@@ -52,7 +52,11 @@ class CategoryController extends Controller
      */
     public function actionView($id)
     {
-        return $this->render('view', [
+        /*$id=Yii::$app->request->get('id');
+        debug($id);
+       $pages=Pages::find()->where(['category_id'=>$id])->all();
+       return $this->render('view',compact('pages'));*/
+       return $this->render('view', [
             'model' => $this->findModel($id),
         ]);
     }

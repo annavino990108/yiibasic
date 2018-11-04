@@ -68,6 +68,8 @@ $bundle = yiister\gentelella\assets\Asset::register($this);
                                     ["label" => "Главная", "url" => ["/admin/default/index"], "icon" => "files-o"],
                                     ["label" => "Новости", "url" => ["/admin/news/index"], "icon" => "files-o"],
                                     ["label" => "Пользователи", "url" => ["/admin/users/index"], "icon" => "files-o"],
+                                    ["label" => "Категории", "url" => ["/admin/category/index"], "icon" => "files-o"],
+                                    ["label" => "Страницы", "url" => ["/admin/pages/index"], "icon" => "files-o"],
                                    /* ["label" => "Error page", "url" => ["site/error-page"], "icon" => "close"],
                                     [
                                         "label" => "Widgets",
@@ -136,7 +138,7 @@ $bundle = yiister\gentelella\assets\Asset::register($this);
                 </div>
                 <!-- /sidebar menu -->
 
-                <!-- /menu footer buttons -->
+                <!-- /menu footer buttons 
                 <div class="sidebar-footer hidden-small">
                     <a data-toggle="tooltip" data-placement="top" title="Settings">
                         <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
@@ -151,7 +153,7 @@ $bundle = yiister\gentelella\assets\Asset::register($this);
                         <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
                     </a>
                 </div>
-                <!-- /menu footer buttons -->
+                 /menu footer buttons -->
             </div>
         </div>
 

@@ -64,7 +64,7 @@ AppAsset::register($this);
       Костромской энергетический<br/>техникум имени Ф.В.Чижова
     </div>
 
- <?php
+ <!--<?php
     NavBar::begin([
        // 'brandLabel' => Yii::$app->name,
        // 'brandUrl' => Yii::$app->homeUrl,
@@ -82,12 +82,14 @@ AppAsset::register($this);
         ],
     ]);
     NavBar::end();
-    ?>
-
-      <?=\app\components\MenuWidget::widget(['tpl'=>'menu'])?>
+    ?>!-->
+<!--Menu!-->
+<div class="container">
+     <?=\app\components\MenuWidget::widget(['tpl'=>'menu'])?>
+   </div>
+<!--Menu!-->
 
 <div style="text-align: justify;padding-top:50px ">
-<h2>Заголовок</h2>
     <div class="container">
         <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],

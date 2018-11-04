@@ -22,11 +22,10 @@ class Category extends \yii\db\ActiveRecord
     {
         return 'category';
     }
-    public function getPages()
+   public function getPages()
     {
         return $this->hasMany(Pages::className(),['category_id'=>'id']);
     }
-
     /**
      * {@inheritdoc}
      */

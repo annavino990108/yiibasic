@@ -2,6 +2,9 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use mihaildev\ckeditor\CKEditor;
+use mihaildev\elfinder\ElFinder ; 
+use mihaildev\elfinder\InputFile;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Pages */
@@ -16,7 +19,10 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'category_id')->textInput() ?>
 
-    <?= $form->field($model, 'content')->textarea(['rows' => 6]) ?>
+    <?= $form->field($model, 'content')->widget(CKEditor::className(),[
+
+         'editorOptions' => ElFinder::ckeditorOptions('elfinder',[]),
+        ]);?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>

@@ -25,7 +25,7 @@ class MenuWidget extends Widget{
 		$this->data=Category::find()->indexBy('id')->asArray()->all();
 		$this->tree=$this->getTree();
 		$this->menuHtml=$this->getMenuHtml($this->tree);
-		debug($this->tree);
+		//debug($this->tree);
 		return $this->menuHtml;
 	}
 	public function getTree()
