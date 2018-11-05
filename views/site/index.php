@@ -26,3 +26,26 @@ $this->title = 'My Yii Application';
 </div>
 </div>
 </div>
+
+<hr/>
+
+  <div class="card">
+    <div class="card-header">
+      Дата
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-4">
+               <img class="card-img-top" src=".../100px180/" alt="Card image cap" style="width: 280px;height: 180px;">
+             </div>
+                  <div class="col-6">
+                  <h5 class="card-title">Заголовок</h5>
+                  <p class="card-text">Текст</p>
+                  <a href="#" class="btn btn-primary">Подробнее...</a>
+             </div>
+      </div>
+    </div>
+</div>
+
+<hr/>
+<a href="/news/index"><button type="button" class="btn btn-primary btn-lg">Все новости</button></a>
