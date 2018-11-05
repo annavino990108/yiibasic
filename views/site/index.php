@@ -5,49 +5,24 @@
 $this->title = 'My Yii Application';
 ?>
 <div class="site-index">
-
-    <div class="jumbotron">
-        <h1>Congratulations!</h1>
-
-        <p class="lead">You have successfully created your Yii-powered application.</p>
-
-        <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
-    </div>
-
-    <div class="body-content">
-
-        <div class="row">
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/doc/">Yii Documentation &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/forum/">Yii Forum &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a></p>
-            </div>
+    <div class="row">
+        <div class="col">
+            <img src="/images/mainimg.jpg" style="width: 540px; height: 380px;">
         </div>
+        <div class="col">
+<div style="font-size: 20px;">
+ Вы обратились к сайту ОГБПОУ «Костромской энергетический техникум имени Ф. В. Чижова» и мы приветствуем Вас.<br/>
 
-    </div>
+КЭТ — это серьёзная профессиональная подготовка и разносторонняя студенческая жизнь, это лекции, семинары и практика на предприятиях Костромы, Костромской и Московской областей.<br/>
+
+КЭТ — это техническое творчество и научные исследования студентов, участие в выставках и выступления на студенческих конференциях, дипломы победителей конкурсов профессионального мастерства и предметных олимпиад.<br/>
+
+КЭТ — это спортивные достижения и победы команды КВН, занятия в творческих студиях, спортивные секции в собственном спортивном комплексе, общежитие, столовая, учебно-производственные мастерские и лаборатории, это история длиннее века и её музей.<br/>
+
+КЭТ — это медаль «Европейское качество» и победа в конкурсе «100 лучших ссузов России».<br/>
+
+КЭТ - это обучение по 7 действительно востребованным на рынке труда специальностям.
+</div>
+</div>
+</div>
 </div>

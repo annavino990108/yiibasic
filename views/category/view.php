@@ -2,7 +2,7 @@
 use yii\helpers\Html;
 use app\models\Pages;
 
-$this->title='xnjjn';
+$this->title='';
 ?>
 <hr/>
 <h1><?= $pages->title?></h1>

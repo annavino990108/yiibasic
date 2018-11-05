@@ -1,4 +1,3 @@
-
 <nav class="menu">
 	<li>
 		<a href="<?= \yii\helpers\Url::to(['/category/view','id'=>$category['id']])?>">
@@ -43,7 +42,7 @@
 		}
 		.menu li:hover > ul{
 			visibility: visible;
-			position: absolute;
+			position: relative;
 		}
 		.menu ul a{
 			padding: 16.5px 65px;
