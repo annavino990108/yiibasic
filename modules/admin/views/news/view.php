@@ -34,15 +34,17 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             'id',
             'title',
+            'description:ntext',
             [
                 'attribute'=> 'content',
                 'format'=>'html',
             ],
-            [
+           /* [
                 'attribute'=>'imageFile',
                 'value'=>"<img src='{$img->getUrl()}'>",
                 'format'=>'html',
-            ],
+            ],*/
+            'image',
             'file',
             'date',
         ],

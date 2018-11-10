@@ -13,11 +13,11 @@ $this->title='';
 		    <div class="card-body">
 		        <div class="row">
 		            <div class="col-4">
-		               <img class="card-img-top" src=".../100px180/" alt="Card image cap" style="width: 280px;height: 180px;">
+		               <img class="card-img-top" src="<?= $post->image?>" alt="Card image cap" style="width: 280px;height: 180px;">
 		             </div>
 		                  <div class="col-6">
 		                  <h5 class="card-title"> <?= $post->title?></h5>
-		                  <p class="card-text"> <?= $post->content?></p>
+		                  <p class="card-text"> <?= $post->description?></p>
 		                  <a href="<?= \yii\helpers\Url::to(['/news/view','id'=>$post['id']])?>" class="btn btn-primary">Подробнее...</a>
 		             </div>
 		      </div>

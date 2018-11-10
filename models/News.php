@@ -45,11 +45,11 @@ class News extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-          [['title'],'required'],
-          [['title','content'],'string'],
+          [['description','title'],'required'],
+          [['description','title','content'],'string'],
           [['date'],'date','format'=>'php:Y-m-d'],
           [['date'],'default','value'=>date('Y-m-d')],
-          [['title','file'],'string','max'=>255],
+          [['title','file','image'],'string','max'=>255],
           [['imageFile'], 'file', 'extensions' => 'png, jpg,jpeg'],
         ];
     }
@@ -62,6 +62,7 @@ class News extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'title' => 'Title',
+            'description' => 'Description',
             'content' => 'Content',
             'imageFile' => 'Image',
             'file' => 'File',

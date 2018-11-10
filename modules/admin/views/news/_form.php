@@ -17,6 +17,8 @@ use mihaildev\elfinder\InputFile;
     <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]); ?>
 
     <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
+    
+    <?= $form->field($model, 'description')->textarea(['rows' => 6]) ?>
 
     <?= $form->field($model, 'content')->widget(CKEditor::className(),[
 
@@ -25,7 +27,8 @@ use mihaildev\elfinder\InputFile;
 
     <?= $form->field($model, 'date')->textInput() ?>
 
-    <?= $form->field($model, 'imageFile')->fileInput()/*widget(InputFile::className(), [
+   <!-- <?= $form->field($model, 'imageFile')->fileInput()?>!-->
+    <?= $form->field($model, 'image')->widget(InputFile::className(), [
     'language'      => 'ru',
     'controller'    => 'elfinder', // вставляем название контроллера, по умолчанию равен elfinder
     'filter'        => 'image',    // фильтр файлов, можно задать массив фильтров https://github.com/Studio-42/elFinder/wiki/Client-configuration-options#wiki-onlyMimes
@@ -33,7 +36,7 @@ use mihaildev\elfinder\InputFile;
     'options'       => ['class' => 'form-control'],
     'buttonOptions' => ['class' => 'btn btn-default'],
     'multiple'      => false       // возможность выбора нескольких файлов
-]);*/ ?>
+]); ?>
 
     <?= $form->field($model, 'file')->widget(InputFile::className(), [
     'language'      => 'ru',
