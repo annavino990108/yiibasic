@@ -2,7 +2,7 @@
 
 /* @var $this yii\web\View */
 
-$this->title = 'My Yii Application';
+$this->title = 'КЭТ имени Ф.В. Чижова';
 ?>
 <div class="site-index">
     <div class="row">
@@ -31,18 +31,18 @@ $this->title = 'My Yii Application';
 
 <?php if(!empty($news)): ?>
   <?php foreach ($news as $post):?>
-      <div class="card">
+      <div class="card" style="margin-top:20px;">
         <div class="card-header">
-          <?= $post->date?>
+          <span style="color: #007BFF;font-size: 15px;"><?= $post->date?></span>
         </div>
         <div class="card-body">
             <div class="row">
                 <div class="col-4">
                    <img class="card-img-top" src="<?= $post->image?>" alt="Card image cap" style="width: 280px;height: 180px;">
                  </div>
-                      <div class="col-6">
-                      <h5 class="card-title"> <?= $post->title?></h5>
-                      <p class="card-text"> <?= $post->description?></p>
+                      <div class="col-8">
+                      <h5 class="card-title" style="font-size: 15px;"> <?= $post->title?></h5>
+                      <p class="card-text" style="font-size: 13px;"> <?= $post->description?></p>
                       <a href="<?= \yii\helpers\Url::to(['/news/view','id'=>$post['id']])?>" class="btn btn-primary">Подробнее...</a>
                  </div>
           </div>

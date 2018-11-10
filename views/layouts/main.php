@@ -97,7 +97,7 @@ AppAsset::register($this);
 <!--Menu!-->
 
 <div style="text-align: justify;padding-top:50px ">
-    <div class="container">
+    <div class="container" style="font-size: 15px;">
         <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
         ]) ?>
@@ -113,11 +113,29 @@ AppAsset::register($this);
       <iframe  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2127.4134529978965!2d40.90658291514439!3d57.77735954151051!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46ad45559d8c1e57%3A0xb8351ea7ed1b1eaf!2z0JrQvtGB0YLRgNC-0LzRgdC60L7QuSDRjdC90LXRgNCz0LXRgtC40YfQtdGB0LrQuNC5INGC0LXRhdC90LjQutGD0Lwg0LjQvC4g0KQu0JIu0KfQuNC20L7QstCw!5e0!3m2!1sru!2sru!4v1540233377127" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
     </div>
     <div class="col">
+      <h3>Контактная информация:</h3>
+      <ul style="list-style: none; font-size: 15px;">
+        <li>Справочные телефоны: (4942) 315191, (4942) 315026</li>
+        <li>Адрес электронной почты Техникума: spo-ket@mail.ru</li>
+      </ul>
+      <hr>
+      <a href="http://www.eduportal44.ru/sites/Noko/_layouts/15/start.aspx#/SitePages/%D0%94%D0%BE%D0%BC%D0%B0%D1%88%D0%BD%D1%8F%D1%8F.aspx">
+        <img src="/images/noko.jpg" width="100" height="100" alt="">
+       <span style="font-size: 15px;">Независимая оценка качества образования</span>
+      </a><br>
+      <a href="http://bus.gov.ru/pub/home">
+        <img src="/images/rez.jpg" width="100" height="100" alt="">
+       <span style="font-size: 15px;">Результаты НОКО</span>
+      </a><br>
+      <a href="http://www.gto.ru/">
+        <img src="/images/gto.jpg" width="100" height="100" alt="">
+       <span style="font-size: 15px;"> Всероссийский физкультурно-спортивный комплекс</span>
+      </a>
     </div>
   </div>
   <hr/>
-  <div style="text-align: center;">
-    2018
+  <div style="text-align: center; font-size: 15px; padding-top: 20px; padding-bottom: 20px;">
+    © 1894-2018г. ОГБПОУ «Костромской энергетический техникум имени Ф. В. Чижова»
   </div>
 </div>
     <!-- Optional JavaScript -->
