@@ -2,6 +2,8 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use mihaildev\elfinder\ElFinder ; 
+use mihaildev\elfinder\InputFile;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Users */
@@ -22,7 +24,15 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'role')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'img')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'img')->widget(InputFile::className(), [
+    'language'      => 'ru',
+    'controller'    => 'elfinder', // вставляем название контроллера, по умолчанию равен elfinder
+    'filter'        => 'image',    // фильтр файлов, можно задать массив фильтров https://github.com/Studio-42/elFinder/wiki/Client-configuration-options#wiki-onlyMimes
+    'template'      => '<div class="input-group">{input}<span class="input-group-btn">{button}</span></div>',
+    'options'       => ['class' => 'form-control'],
+    'buttonOptions' => ['class' => 'btn btn-default'],
+    'multiple'      => false       // возможность выбора нескольких файлов
+]); ?>
 
     <?= $form->field($model, 'email')->textInput(['maxlength' => true]) ?>
 
