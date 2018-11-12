@@ -38,16 +38,16 @@ AppAsset::register($this);
           <img src="/images/logo.png" width="60" height="60" alt="">
       </div>
       <div class="col">
-        <img src="/images/icon-adress.png">просп. Текстильщиков, 73, Кострома
+        <img src="/images/icon1.png">просп. Текстильщиков, 73, Кострома
       </div>
       <div class="col">
-        <img src="/images/icon-phone.png">(4942)315191
+        <img src="/images/icon2.png">(4942)315191
       </div>
       <div class="col">
-        <img src="/images/icon-email.png"> spo-ket@mail.ru
+        <img src="/images/icon4.png" > spo-ket@mail.ru
       </div>
       <div class="col">
-        <img src="/images/icon-enter.png" style="float: right;">
+        <img src="/images/icon5.png" style="float: right;">
       </div>
         <div class="col" style="font-size: 20px;">
         <?php echo Nav::widget(['items' => [Yii::$app->user->isGuest ? (
