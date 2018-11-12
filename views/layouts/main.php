@@ -35,7 +35,7 @@ AppAsset::register($this);
     <div class="container center" style="background-color: #FFFFFF;">
     <div class="row" style="background-color:#F8F9FA;text-align: center; padding-top: 15px; ">
       <div class="col">
-          <img src="/images/logo.png" width="60" height="60" alt="">
+          <img src="/images/logo.png" width="80" height="80" alt="">
       </div>
       <div class="col">
         <img src="/images/icon1.png">просп. Текстильщиков, 73, Кострома
@@ -44,7 +44,7 @@ AppAsset::register($this);
         <img src="/images/icon2.png">(4942)315191
       </div>
       <div class="col">
-        <img src="/images/icon4.png" > spo-ket@mail.ru
+        <img src="/images/icon4.png" width="60" height="60"> spo-ket@mail.ru
       </div>
       <div class="col">
         <img src="/images/icon5.png" style="float: right;">
@@ -87,7 +87,7 @@ AppAsset::register($this);
 <div class="container">
   <div class="row">
     <div class="col-md-0">
-  <a href="/site/index"> <img src="/images/home.png"></a>
+  <a href="/site/index"> <img src="/images/icon6.png"></a>
 </div>
 <div class="col">
      <?=\app\components\MenuWidget::widget(['tpl'=>'menu'])?>

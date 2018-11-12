@@ -2,7 +2,8 @@
 use yii\helpers\Html;
 use app\models\Pages;
 
-$this->title = 'КЭТ имени Ф.В. Чижова';
+$this->title = $pages->title;
+$this->params['breadcrumbs'][] = $this->title;
 ?>
 <hr/>
 <h1><?= $pages->title?></h1>
