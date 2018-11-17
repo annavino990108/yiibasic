@@ -1,0 +1,49 @@
+<?php
+
+use yii\helpers\Html;
+use yii\widgets\DetailView;
+
+/* @var $this yii\web\View */
+/* @var $model app\models\Timetable */
+
+$this->title = $model->id;
+$this->params['breadcrumbs'][] = ['label' => 'Timetables', 'url' => ['index']];
+$this->params['breadcrumbs'][] = $this->title;
+?>
+<div class="timetable-view">
+
+    <h1><?= Html::encode($this->title) ?></h1>
+
+    <p>
+        <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Delete', ['delete', 'id' => $model->id], [
+            'class' => 'btn btn-danger',
+            'data' => [
+                'confirm' => 'Are you sure you want to delete this item?',
+                'method' => 'post',
+            ],
+        ]) ?>
+    </p>
+
+    <?= DetailView::widget([
+        'model' => $model,
+        'attributes' => [
+            'id',
+            'date',
+            'groupname',
+            'lesson1',
+            'cab1',
+            'lesson2',
+            'cab2',
+            'lesson3',
+            'cab3',
+            'lesson4',
+            'cab4',
+            'lesson5',
+            'cab5',
+            'lesson6',
+            'cab6',
+        ],
+    ]) ?>
+
+</div>

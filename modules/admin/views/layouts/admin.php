@@ -70,6 +70,17 @@ $bundle = yiister\gentelella\assets\Asset::register($this);
                                     ["label" => "Пользователи", "url" => ["/admin/users/index"], "icon" => "files-o"],
                                     ["label" => "Категории", "url" => ["/admin/category/index"], "icon" => "files-o"],
                                     ["label" => "Страницы", "url" => ["/admin/pages/index"], "icon" => "files-o"],
+                                       [
+                                        "label" => "Расписание",
+                                        "icon" => "th",
+                                        "url" => "#",
+                                        "items" => [
+                                            ["label" => "Расписание", "url" => ["/admin/timetable/index"]],
+                                            ["label" => "Группы", "url" => ["/admin/groupclass/index"]],
+                                            ["label" => "Предметы", "url" => ["/admin/lessons/index"]],
+                                            
+                                        ],
+                                    ],
                                 ],
                             ]
                         )
@@ -157,7 +168,7 @@ $bundle = yiister\gentelella\assets\Asset::register($this);
     </ul>
     <div class="clearfix"></div>
     <div id="notif-group" class="tabbed_notifications"></div>
-</div>
+</div>!
 <!-- /footer content -->
 <?php $this->endBody(); ?>
 </body>

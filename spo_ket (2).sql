@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Ноя 10 2018 г., 21:06
+-- Время создания: Ноя 17 2018 г., 23:25
 -- Версия сервера: 5.6.38
 -- Версия PHP: 5.5.38
 
@@ -41,11 +41,30 @@ CREATE TABLE `category` (
 --
 
 INSERT INTO `category` (`id`, `parent_id`, `name`, `keywords`, `description`) VALUES
-(1, NULL, 'Главная', '', ''),
-(2, 5, 'Образование', '', ''),
+(1, NULL, 'О техникуме', '', ''),
+(2, 5, 'Приемная комиссия', '', ''),
 (3, 5, 'Расписание', '', ''),
 (4, NULL, 'Основные сведения', NULL, NULL),
-(5, NULL, 'Студенту', '', '');
+(5, NULL, 'Абитуриенту', '', '');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `groupclass`
+--
+
+CREATE TABLE `groupclass` (
+  `id` int(10) NOT NULL,
+  `name` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `groupclass`
+--
+
+INSERT INTO `groupclass` (`id`, `name`) VALUES
+(1, '1-1'),
+(2, '1-2');
 
 -- --------------------------------------------------------
 
@@ -73,6 +92,24 @@ INSERT INTO `image` (`id`, `filePath`, `itemId`, `isMain`, `modelName`, `urlAlia
 (3, 'News/News14/241737.jpg', 14, 1, 'News', '59ea85596a-1', ''),
 (4, 'News/News13/562fed.jpg', 13, 1, 'News', '3e6912a5ff-1', ''),
 (5, 'News/News8/25e16e.jpg', 8, 1, 'News', '77fce7ec12-1', '');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `lessons`
+--
+
+CREATE TABLE `lessons` (
+  `id` int(10) NOT NULL,
+  `name` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `lessons`
+--
+
+INSERT INTO `lessons` (`id`, `name`) VALUES
+(1, 'Иностранный язык');
 
 -- --------------------------------------------------------
 
@@ -143,7 +180,41 @@ CREATE TABLE `pages` (
 --
 
 INSERT INTO `pages` (`id`, `title`, `category_id`, `content`) VALUES
-(1, 'Образование', 2, '<p><img alt=\"\" src=\"/upload/global/OpfSbdGnorY.jpg\" style=\"height:192px; width:256px\" /></p>\r\n\r\n<p>Образование</p>\r\n');
+(1, 'Приемная комиссия', 2, '<p style=\"text-align:justify\">Приемная комиссия техникума начнет работу с&nbsp;<strong>5 июня</strong>. С понедельника по пятницу 8.30 - 16.00, суббота 8.30-12.00 (воскресенье выходной) вам помогут правильно написать&nbsp;<a href=\"http://www.spo-ket.ru/sites/default/files/Zayavlenie_priem_2017.pdf\" style=\"color: rgb(2, 122, 198); text-decoration-line: none;\"><span style=\"color:#000000\">заявлени</span></a>е, расскажут о специальностях техникума, предоставят информацию об организации образовательного процесса, познакомят с условиями обучения в техникуме <span style=\"color:#000000\">(</span><a href=\"http://www.spo-ket.ru/sites/default/files/Pologenie_priemnaya_komissiya._2018.doc\" style=\"color: rgb(2, 122, 198); text-decoration-line: none;\"><span style=\"color:#000000\">Положение о приёмной комиссии).</span></a></p>\r\n\r\n<table style=\"border-collapse:collapse; color:rgb(73, 73, 73); font-family:verdana,sans-serif; font-size:12px; margin:1em 0px; text-align:justify; width:752.8px\">\r\n</table>\r\n\r\n<p style=\"text-align:justify\"><span style=\"color:rgb(73, 73, 73); font-family:verdana,sans-serif; font-size:12px\">Вместе с заявлением о поступлении в техникум абитуриент должен предоставить в приёмную комиссию следующие документы:</span></p>\r\n\r\n<ol>\r\n	<li style=\"text-align:justify\">Оригинал или ксерокопию паспорта (документа, удостоверяющего личность и гражданство)</li>\r\n	<li style=\"text-align:justify\">Оригинал или ксерокопию аттестата (другого документа гос.образца об образовании)</li>\r\n	<li style=\"text-align:justify\">4 фотографии размером 3 х 4 см</li>\r\n	<li style=\"text-align:justify\">Медицинская справка, установленной формы 086У</li>\r\n	<li style=\"text-align:justify\">СНИЛС</li>\r\n	<li style=\"text-align:justify\">Медицинская полис\r\n	<p><strong>ВАЖНО!</strong></p>\r\n\r\n	<p>В зависимости от выбранной специальности и формы обучения, перечень документов для поступления в техникум может дополняться:</p>\r\n	</li>\r\n	<li style=\"text-align:justify\">Справка с места работы или копия трудовой книжки (для заочного отделения)</li>\r\n	<li style=\"text-align:justify\">Другие документы могут быть представлены поступающим, если он претендует на льготы, установленные законодательством РФ</li>\r\n	<li style=\"text-align:justify\">При поступлении на специальность &laquo;Электрические станции, сети и системы&raquo; поступающие проходят обязательные медицинские осмотры (обследования) /согласно Постановления Правительства РФ от 14 августа 2013 г. №697/.</li>\r\n</ol>\r\n\r\n<table style=\"border-collapse:collapse; color:rgb(73, 73, 73); font-family:verdana,sans-serif; font-size:12px; margin:1em 0px; text-align:justify; width:752.8px\">\r\n</table>\r\n\r\n<p style=\"text-align:justify\">Вы можете получить консультацию по интересующим вас вопросам по телефону приемной комиссии (4942) 31-20-24 .</p>\r\n\r\n<p style=\"text-align:justify\">Или посетить наше учебное заведение по адресу: г.Кострома, проспект Текстильщиков, 73.</p>\r\n\r\n<p style=\"text-align:justify\">Техникум готов встретить своих новых студентов просторными кабинетами, современными аудиториями и лабораториями, оборудованным спортивным залом, величественными актовыми залами; познакомить с вековой историей техникума в музее, провести по залам библиотеки, рассказать о славных чижовских традициях.</p>\r\n\r\n<p style=\"text-align:justify\">Техникум ведет&nbsp;<strong>обучение по&nbsp;<a href=\"http://www.spo-ket.ru/node/1596\" style=\"color: rgb(2, 122, 198); text-decoration-line: none;\">специальностям</a></strong>, входящим в&nbsp;<strong>список стратегических</strong>. Абитуриенты имеют возможность обучаться&nbsp;<a href=\"http://www.spo-ket.ru/sites/default/files/cp1.PDF\" style=\"color: rgb(2, 122, 198); text-decoration-line: none;\">по целевому направлению</a>&nbsp;от предприятий, заключив трехсторонний договор,&nbsp;<strong>за счет бюджетных средств</strong>.</p>\r\n\r\n<p style=\"text-align:justify\">Вся&nbsp;<strong>деятельность</strong>&nbsp;техникума&nbsp;<strong>лицензирована и аккредитована</strong>.&nbsp;<strong>Студенты-юноши</strong>, поступившие в техникум&nbsp;<strong>на базе 9 классов</strong>, призываются&nbsp;<strong>в ряды РА после получения диплома</strong>.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p style=\"text-align:center\"><strong>Диплом государственного образца</strong></p>\r\n\r\n<p style=\"text-align:center\"><strong>Делайте правильный выбор!</strong></p>\r\n\r\n<p style=\"text-align:center\"><strong>Мы готовим кадры для российской энергетики!</strong></p>\r\n'),
+(2, 'О техникуме', 1, '<p>Текст...</p>\r\n');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `timetable`
+--
+
+CREATE TABLE `timetable` (
+  `id` int(100) NOT NULL,
+  `date` date NOT NULL,
+  `groupname` varchar(255) NOT NULL,
+  `lesson1` varchar(255) DEFAULT NULL,
+  `cab1` int(10) DEFAULT NULL,
+  `lesson2` varchar(255) DEFAULT NULL,
+  `cab2` int(10) DEFAULT NULL,
+  `lesson3` varchar(255) DEFAULT NULL,
+  `cab3` int(10) DEFAULT NULL,
+  `lesson4` varchar(255) DEFAULT NULL,
+  `cab4` int(10) DEFAULT NULL,
+  `lesson5` varchar(255) DEFAULT NULL,
+  `cab5` int(10) DEFAULT NULL,
+  `lesson6` varchar(255) DEFAULT NULL,
+  `cab6` int(10) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `timetable`
+--
+
+INSERT INTO `timetable` (`id`, `date`, `groupname`, `lesson1`, `cab1`, `lesson2`, `cab2`, `lesson3`, `cab3`, `lesson4`, `cab4`, `lesson5`, `cab5`, `lesson6`, `cab6`) VALUES
+(1, '2012-12-12', '1-1', 'Иностранный язык', 11, 'Иностранный язык', 1, 'Иностранный язык', 1, 'Иностранный язык', 1, 'Иностранный язык', 1, 'Иностранный язык', 1),
+(2, '2012-12-12', '1-1', 'Иностранный язык', 2, 'Иностранный язык', 2, 'Иностранный язык', 2, 'Иностранный язык', 2, 'Иностранный язык', 2, 'Иностранный язык', 2),
+(3, '2020-12-12', '1-2', 'Иностранный язык', NULL, '', NULL, '', NULL, '', NULL, '', NULL, '', NULL);
 
 -- --------------------------------------------------------
 
@@ -167,7 +238,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `username`, `password`, `auth_key`, `role`, `img`, `email`) VALUES
-(1, 'Анна Виноградова', 'admin', '$2y$13$KMBxgkcssPHngdLMTs5DJ.tfapqqmDQXBZvnfhuwO8c1ISpLHefR6', 'rBXGY1A7_zEW0dtUqcm5xDh6JE1Qi78H', '', '', '');
+(1, 'Анна Виноградова', 'admin', '$2y$13$KMBxgkcssPHngdLMTs5DJ.tfapqqmDQXBZvnfhuwO8c1ISpLHefR6', 'bGBkFAYXsR2zMwYOEAXYYqyAaatJ30Ti', '', '/upload/global/Users/user.png', '');
 
 --
 -- Индексы сохранённых таблиц
@@ -180,9 +251,21 @@ ALTER TABLE `category`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Индексы таблицы `groupclass`
+--
+ALTER TABLE `groupclass`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Индексы таблицы `image`
 --
 ALTER TABLE `image`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `lessons`
+--
+ALTER TABLE `lessons`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -204,6 +287,12 @@ ALTER TABLE `pages`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Индексы таблицы `timetable`
+--
+ALTER TABLE `timetable`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Индексы таблицы `users`
 --
 ALTER TABLE `users`
@@ -220,22 +309,40 @@ ALTER TABLE `category`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
+-- AUTO_INCREMENT для таблицы `groupclass`
+--
+ALTER TABLE `groupclass`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT для таблицы `image`
 --
 ALTER TABLE `image`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
+-- AUTO_INCREMENT для таблицы `lessons`
+--
+ALTER TABLE `lessons`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT для таблицы `news`
 --
 ALTER TABLE `news`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT для таблицы `pages`
 --
 ALTER TABLE `pages`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT для таблицы `timetable`
+--
+ALTER TABLE `timetable`
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT для таблицы `users`
