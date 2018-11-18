@@ -15,8 +15,10 @@ use app\models\Lessons;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'date')->textInput() ?>
-
+    <?= $form->field($model, 'date')->widget(\yii\jui\DatePicker::class, [
+    'language' => 'ru',
+    'dateFormat' => 'yyyy-MM-dd',
+]) ?>
     <?= $form->field($model, 'groupname')->dropDownList(ArrayHelper::map(GroupClass::find()->all(),'name','name'),
         ['prompt' => ' ']
     ); ?>

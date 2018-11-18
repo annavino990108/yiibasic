@@ -66,10 +66,19 @@ $bundle = yiister\gentelella\assets\Asset::register($this);
                                 "items" => [
                                     ["label" => "Home", "url" => "/", "icon" => "home"],
                                     ["label" => "Главная", "url" => ["/admin/default/index"], "icon" => "files-o"],
-                                    ["label" => "Новости", "url" => ["/admin/news/index"], "icon" => "files-o"],
                                     ["label" => "Пользователи", "url" => ["/admin/users/index"], "icon" => "files-o"],
-                                    ["label" => "Категории", "url" => ["/admin/category/index"], "icon" => "files-o"],
-                                    ["label" => "Страницы", "url" => ["/admin/pages/index"], "icon" => "files-o"],
+                                    ["label" => "Новости", "url" => ["/admin/news/index"], "icon" => "files-o"],
+                                    
+                                      [
+                                        "label" => "Страницы",
+                                        "icon" => "th",
+                                        "url" => "#",
+                                        "items" => [
+                                            ["label" => "Категории", "url" => ["/admin/category/index"]],
+                                            ["label" => "Страницы", "url" => ["/admin/pages/index"]],
+                                            
+                                        ],
+                                    ],
                                        [
                                         "label" => "Расписание",
                                         "icon" => "th",

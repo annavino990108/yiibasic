@@ -76,8 +76,7 @@ AppAsset::register($this);
         'options' => ['class' => 'navbar-nav navbar-right',
         'style'=>'font-size:15px;'],
         'items' => [
-            ['label' => 'Home', 'url' => ['/site/index']],
-            ['label' => 'About', 'url' => ['/site/about']],
+            ['label' => 'Главная', 'url' => ['/site/index']],
             ['label' => 'Расписание', 'url' => ['/timetable/index']],
         ],
     ]);
