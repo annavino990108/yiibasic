@@ -62,7 +62,7 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        $news=News::find()->limit(3)->all();
+        $news=News::find()->limit(3)->where(['public' => 1])->all();
         return $this->render('index',compact('news'));
         return $this->render('index');
     }

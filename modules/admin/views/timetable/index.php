@@ -27,6 +27,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'id',
             'date',
+            'otdelenie',
             'groupname',
             //'lesson1',
             //'cab1',

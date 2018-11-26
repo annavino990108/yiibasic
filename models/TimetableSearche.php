@@ -19,7 +19,7 @@ class TimetableSearche extends Timetable
     {
         return [
             [['id', 'cab1', 'cab2', 'cab3', 'cab4', 'cab5', 'cab6'], 'integer'],
-            [['date', 'groupname', 'lesson1', 'lesson2', 'lesson3', 'lesson4', 'lesson5', 'lesson6'], 'safe'],
+            [['date','otdelenie', 'groupname', 'lesson1', 'lesson2', 'lesson3', 'lesson4', 'lesson5', 'lesson6','prepodovatel1','prepodovatel2','prepodovatel3','prepodovatel4'], 'safe'],
         ];
     }
 

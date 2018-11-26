@@ -42,7 +42,7 @@ class Timetable extends \yii\db\ActiveRecord
             [['date', 'groupname'], 'required'],
             [['date'], 'safe'],
             [['cab1', 'cab2', 'cab3', 'cab4', 'cab5', 'cab6'], 'integer'],
-            [['groupname', 'lesson1', 'lesson2', 'lesson3', 'lesson4', 'lesson5', 'lesson6'], 'string', 'max' => 255],
+            [['otdelenie','groupname', 'lesson1', 'lesson2', 'lesson3', 'lesson4', 'lesson5', 'lesson6','prepodavatel1','prepodavatel2','prepodavatel3','prepodavatel4'], 'string', 'max' => 50],
             [['date'],'date','format'=>'php:Y-m-d'],
         ];
     }

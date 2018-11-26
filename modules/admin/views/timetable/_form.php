@@ -5,6 +5,7 @@ use yii\widgets\ActiveForm;
 use yii\helpers\ArrayHelper;
 use app\models\GroupClass;
 use app\models\Lessons;
+use app\models\Otdelenie;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Timetable */
@@ -19,44 +20,35 @@ use app\models\Lessons;
     'language' => 'ru',
     'dateFormat' => 'yyyy-MM-dd',
 ]) ?>
+    <?= $form->field($model, 'otdelenie')->dropDownList(ArrayHelper::map(Otdelenie::find()->all(),'name','name'),
+        ['prompt' => ' ',]); ?>
+
     <?= $form->field($model, 'groupname')->dropDownList(ArrayHelper::map(GroupClass::find()->all(),'name','name'),
-        ['prompt' => ' ']
-    ); ?>
-    <?= $form->field($model, 'lesson1')->dropDownList(ArrayHelper::map(Lessons::find()->all(),'name','name'),
-        ['prompt' => ' ']
-    ); ?>
+        ['prompt' => ' ',]); ?>
 
-    <?= $form->field($model, 'cab1')->textInput() ?>
 
-    <?= $form->field($model, 'lesson2')->dropDownList(ArrayHelper::map(Lessons::find()->all(),'name','name'),
-        ['prompt' => ' ']
-    ); ?>
-
-    <?= $form->field($model, 'cab2')->textInput() ?>
-
-    <?= $form->field($model, 'lesson3')->dropDownList(ArrayHelper::map(Lessons::find()->all(),'name','name'),
-        ['prompt' => ' ']
-    ); ?>
-
-    <?= $form->field($model, 'cab3')->textInput() ?>
-
-    <?= $form->field($model, 'lesson4')->dropDownList(ArrayHelper::map(Lessons::find()->all(),'name','name'),
-        ['prompt' => ' ']
-    ); ?>
-
-    <?= $form->field($model, 'cab4')->textInput() ?>
-
-    <?= $form->field($model, 'lesson5')->dropDownList(ArrayHelper::map(Lessons::find()->all(),'name','name'),
-        ['prompt' => ' ']
-    ); ?>
-
-    <?= $form->field($model, 'cab5')->textInput() ?>
-
-    <?= $form->field($model, 'lesson6')->dropDownList(ArrayHelper::map(Lessons::find()->all(),'name','name'),
-        ['prompt' => ' ']
-    ); ?>
-
-    <?= $form->field($model, 'cab6')->textInput() ?>
+    <table>
+        <tr>
+            <td> <?= $form->field($model, 'lesson1')->textInput() ?></td>
+            <td> <?= $form->field($model, 'prepodavatel1')->textInput() ?></td>
+            <td><?= $form->field($model, 'cab1')->textInput() ?></td>
+        </tr>
+        <tr>
+            <td> <?= $form->field($model, 'lesson2')->textInput() ?></td>
+            <td> <?= $form->field($model, 'prepodavatel2')->textInput() ?></td>
+            <td><?= $form->field($model, 'cab2')->textInput() ?></td>
+        </tr>
+               <tr>
+            <td> <?= $form->field($model, 'lesson3')->textInput() ?></td>
+            <td> <?= $form->field($model, 'prepodavatel3')->textInput() ?></td>
+            <td><?= $form->field($model, 'cab3')->textInput() ?></td>
+        </tr>
+               <tr>
+            <td> <?= $form->field($model, 'lesson4')->textInput() ?></td>
+            <td> <?= $form->field($model, 'prepodavatel4')->textInput() ?></td>
+            <td><?= $form->field($model, 'cab4')->textInput() ?></td>
+        </tr>
+    </table>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>

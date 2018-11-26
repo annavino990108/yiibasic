@@ -26,6 +26,7 @@ use mihaildev\elfinder\InputFile;
         ]); ?>
 
     <?= $form->field($model, 'date')->textInput() ?>
+  
 
    <!-- <?= $form->field($model, 'imageFile')->fileInput()?>!-->
     <?= $form->field($model, 'image')->widget(InputFile::className(), [
@@ -47,6 +48,7 @@ use mihaildev\elfinder\InputFile;
     'buttonOptions' => ['class' => 'btn btn-default'],
     'multiple'      => false       // возможность выбора нескольких файлов
 ]);?>
+  <?= $form->field($model, 'public')->radioList([1 => 'yes', 0 => 'No'])->label('Опубликовать'); ?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>

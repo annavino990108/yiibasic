@@ -20,6 +20,7 @@ class GroupclassSearche extends Groupclass
         return [
             [['id'], 'integer'],
             [['name'], 'safe'],
+            [['otdelenie'], 'safe'],
         ];
     }
 

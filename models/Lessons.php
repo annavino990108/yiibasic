@@ -28,6 +28,7 @@ class Lessons extends \yii\db\ActiveRecord
         return [
             [['name'], 'required'],
             [['name'], 'string', 'max' => 255],
+            [['otd1','otd2','otd3','otd4'], 'string', 'max' => 1],
         ];
     }
 

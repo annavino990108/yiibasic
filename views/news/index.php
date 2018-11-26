@@ -1,11 +1,12 @@
 <?php
 use yii\helpers\Html;
+use yii\widgets\LinkPager;
 
 $this->title = 'КЭТ имени Ф.В. Чижова';
 ?>
 
-<?php if(!empty($news)): ?>
-  <?php foreach ($news as $post):?>
+<?php if(!empty($models)): ?>
+  <?php foreach ($models as $post):?>
       <div class="card" style="margin-top:20px;">
         <div class="card-header">
           <span style="color: #007BFF;font-size: 15px;"><?= $post->date?></span>
@@ -25,3 +26,7 @@ $this->title = 'КЭТ имени Ф.В. Чижова';
     </div>
   <?php endforeach; ?>
 <?php endif; ?>
+
+<?php echo LinkPager::widget([
+    'pagination' => $pages,
+]);?>

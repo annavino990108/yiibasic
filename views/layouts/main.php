@@ -86,7 +86,6 @@ AppAsset::register($this);
 <div class="container">
   <div class="row">
     <div class="col-md-0">
-  <a href="/site/index"> <img src="/images/icon6.png"></a>
 </div>
 <div class="col">
      <?=\app\components\MenuWidget::widget(['tpl'=>'menu'])?>

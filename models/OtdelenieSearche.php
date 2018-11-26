@@ -5,12 +5,12 @@ namespace app\models;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\models\News;
+use app\models\Otdelenie;
 
 /**
- * NewsSearche represents the model behind the search form of `app\models\News`.
+ * OtdelenieSearche represents the model behind the search form of `app\models\Otdelenie`.
  */
-class NewsSearche extends News
+class OtdelenieSearche extends Otdelenie
 {
     /**
      * {@inheritdoc}
@@ -19,7 +19,7 @@ class NewsSearche extends News
     {
         return [
             [['id'], 'integer'],
-            [['title', 'description','content', 'image', 'file', 'date','image','public'], 'safe'],
+            [['name'], 'safe'],
         ];
     }
 
@@ -41,7 +41,7 @@ class NewsSearche extends News
      */
     public function search($params)
     {
-        $query = News::find();
+        $query = Otdelenie::find();
 
         // add conditions that should always apply here
 
@@ -60,14 +60,9 @@ class NewsSearche extends News
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
-            'date' => $this->date,
         ]);
 
-        $query->andFilterWhere(['like', 'title', $this->title])
-            ->andFilterWhere(['like', 'description', $this->description])
-            ->andFilterWhere(['like', 'content', $this->content])
-            ->andFilterWhere(['like', 'image', $this->image])
-            ->andFilterWhere(['like', 'file', $this->file]);
+        $query->andFilterWhere(['like', 'name', $this->name]);
 
         return $dataProvider;
     }

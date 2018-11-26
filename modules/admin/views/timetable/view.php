@@ -15,6 +15,8 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
+        <a href="/admin/timetable/index"><button>Расписание</button></a>
+        <?= Html::a('Create Timetable', ['create'], ['class' => 'btn btn-success']) ?>
         <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
         <?= Html::a('Delete', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
@@ -30,19 +32,20 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             'id',
             'date',
+            'otdelenie',
             'groupname',
             'lesson1',
+            'prepodavatel1',
             'cab1',
             'lesson2',
+            'prepodavatel2',
             'cab2',
             'lesson3',
+            'prepodavatel3',
             'cab3',
             'lesson4',
+            'prepodavatel4',
             'cab4',
-            'lesson5',
-            'cab5',
-            'lesson6',
-            'cab6',
         ],
     ]) ?>
 

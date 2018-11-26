@@ -20,6 +20,10 @@ class LessonsSearche extends Lessons
         return [
             [['id'], 'integer'],
             [['name'], 'safe'],
+            [['otd1'], 'safe'],
+            [['otd2'], 'safe'],
+            [['otd3'], 'safe'],
+            [['otd4'], 'safe'],
         ];
     }
 

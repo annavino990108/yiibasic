@@ -3,16 +3,16 @@
 namespace app\modules\admin\controllers;
 
 use Yii;
-use app\models\Groupclass;
-use app\models\GroupclassSearche;
+use app\models\Otdelenie;
+use app\models\OtdelenieSearche;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * GroupclassController implements the CRUD actions for Groupclass model.
+ * OtdelenieController implements the CRUD actions for Otdelenie model.
  */
-class GroupclassController extends Controller
+class OtdelenieController extends Controller
 {
     /**
      * {@inheritdoc}
@@ -30,12 +30,12 @@ class GroupclassController extends Controller
     }
 
     /**
-     * Lists all Groupclass models.
+     * Lists all Otdelenie models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new GroupclassSearche();
+        $searchModel = new OtdelenieSearche();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -45,7 +45,7 @@ class GroupclassController extends Controller
     }
 
     /**
-     * Displays a single Groupclass model.
+     * Displays a single Otdelenie model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -58,13 +58,13 @@ class GroupclassController extends Controller
     }
 
     /**
-     * Creates a new Groupclass model.
+     * Creates a new Otdelenie model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Groupclass();
+        $model = new Otdelenie();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -76,7 +76,7 @@ class GroupclassController extends Controller
     }
 
     /**
-     * Updates an existing Groupclass model.
+     * Updates an existing Otdelenie model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -96,6 +96,7 @@ class GroupclassController extends Controller
     }
 
     /**
+     * Deletes an existing Otdelenie model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -109,15 +110,15 @@ class GroupclassController extends Controller
     }
 
     /**
-     * Finds the Groupclass model based on its primary key value.
+     * Finds the Otdelenie model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Groupclass the loaded model
+     * @return Otdelenie the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Groupclass::findOne($id)) !== null) {
+        if (($model = Otdelenie::findOne($id)) !== null) {
             return $model;
         }
 

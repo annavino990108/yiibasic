@@ -51,6 +51,7 @@ class News extends \yii\db\ActiveRecord
           [['date'],'default','value'=>date('Y-m-d')],
           [['title','file','image'],'string','max'=>255],
           [['imageFile'], 'file', 'extensions' => 'png, jpg,jpeg'],
+          [['public'],'string','max'=>1],
         ];
     }
 

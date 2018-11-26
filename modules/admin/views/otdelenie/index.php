@@ -4,19 +4,19 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
-/* @var $searchModel app\models\LessonsSearche */
+/* @var $searchModel app\models\OtdelenieSearche */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Lessons';
+$this->title = 'Otdelenies';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="lessons-index">
+<div class="otdelenie-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Lessons', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Create Otdelenie', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([
@@ -27,10 +27,6 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'id',
             'name',
-            'otd1',
-            'otd2',
-            'otd3',
-            'otd4',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

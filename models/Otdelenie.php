@@ -5,19 +5,19 @@ namespace app\models;
 use Yii;
 
 /**
- * This is the model class for table "groupclass".
+ * This is the model class for table "otdelenie".
  *
  * @property int $id
  * @property string $name
  */
-class Groupclass extends \yii\db\ActiveRecord
+class Otdelenie extends \yii\db\ActiveRecord
 {
     /**
      * {@inheritdoc}
      */
     public static function tableName()
     {
-        return 'groupclass';
+        return 'otdelenie';
     }
 
     /**
@@ -27,7 +27,7 @@ class Groupclass extends \yii\db\ActiveRecord
     {
         return [
             [['name'], 'required'],
-            [['name','otdelenie'], 'string', 'max' => 50],
+            [['name'], 'string', 'max' => 10],
         ];
     }
 
@@ -39,7 +39,6 @@ class Groupclass extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'name' => 'Name',
-            'otdelenie'=>'Otdelenie',
         ];
     }
 }

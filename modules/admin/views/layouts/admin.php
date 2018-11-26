@@ -8,6 +8,7 @@
 use yii\helpers\Html;
 
 $bundle = yiister\gentelella\assets\Asset::register($this);
+$this->params['breadcrumbs'][] = $this->title;
 
 ?>
 <?php $this->beginPage(); ?>
@@ -86,7 +87,6 @@ $bundle = yiister\gentelella\assets\Asset::register($this);
                                         "items" => [
                                             ["label" => "Расписание", "url" => ["/admin/timetable/index"]],
                                             ["label" => "Группы", "url" => ["/admin/groupclass/index"]],
-                                            ["label" => "Предметы", "url" => ["/admin/lessons/index"]],
                                             
                                         ],
                                     ],
@@ -155,7 +155,6 @@ $bundle = yiister\gentelella\assets\Asset::register($this);
                 </div>
             <?php endif; ?>
             <div class="clearfix"></div>
-
             <?= $content ?>
         </div>
         <!-- /page content -->

@@ -47,6 +47,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'image',
             'file',
             'date',
+            'public',
         ],
     ]) ?>
 
