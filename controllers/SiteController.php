@@ -7,9 +7,13 @@ use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\Response;
 use yii\filters\VerbFilter;
+use yii\helpers\Html;
 use app\models\LoginForm;
 use app\models\ContactForm;
 use app\models\News;
+use app\models\SearchForm;
+use yii\data\Pagination;
+
 
 class SiteController extends Controller
 {
@@ -42,6 +46,17 @@ class SiteController extends Controller
     /**
      * {@inheritdoc}
      */
+    public function beforeAction($action)
+    {
+        $model = new SearchForm();
+        if($model->load(Yii::$app->request->post()) && $model->validate())
+        {
+            $q = Html::encode($model->q);
+            return $this->redirect(Yii::$app->urlManager->createUrl(['site/search', 'q'=>$q]));
+        }
+
+        return true;
+    }
     public function actions()
     {
         return [
@@ -127,5 +142,22 @@ class SiteController extends Controller
     public function actionAbout()
     {
         return $this->render('about');
+    }
+
+    public function actionSearch()
+    {
+        $q = Yii::$app->getRequest()->getQueryParam('q');
+        $query=News::find()->where(['public' => 1])->where(['teg'=>$q]);
+          $pages = new Pagination(['totalCount' => $query->count(),'pageSize' => 1]);
+    $models = $query->offset($pages->offset)
+        ->limit($pages->limit)
+        ->all();
+
+    return $this->render('search', [
+         'models' => $models,
+         'pages' => $pages,
+         'q'=>$q,
+    ]);
+
     }
 }

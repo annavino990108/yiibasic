@@ -8,9 +8,13 @@ use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
+use yii\widgets\ActiveForm;
 use app\assets\AppAsset;
+use app\models\SearchForm;
 
 AppAsset::register($this);
+
+$model = new SearchForm();
 ?>
 <?php $this->beginPage() ?>
 <!doctype html>
@@ -64,24 +68,30 @@ AppAsset::register($this);
       Костромской энергетический<br/>техникум имени Ф.В.Чижова
     </div>
 
- <?php
-    NavBar::begin([
-       // 'brandLabel' => Yii::$app->name,
-       // 'brandUrl' => Yii::$app->homeUrl,
-        'options' => [
-            'class' => 'navbar navbar-expand-lg navbar-light bg-light',
-        ],
-    ]);
-    echo Nav::widget([
-        'options' => ['class' => 'navbar-nav navbar-right',
-        'style'=>'font-size:15px;'],
-        'items' => [
-            ['label' => 'Главная', 'url' => ['/site/index']],
-            ['label' => 'Расписание', 'url' => ['/timetable/index']],
-        ],
-    ]);
-    NavBar::end();
-    ?>
+<!--topMenu!-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+
+      <li class="nav-item" style="font-family: Arial; font-size: 15px;">
+        <a class="nav-link" href="/site/index" style="color: #007BFF;">Главная</a>
+      </li>
+      <li class="nav-item" style="font-family: Arial; font-size: 15px;">
+        <a class="nav-link" href="/timetable/index" style="color: #007BFF;">Расписание</a>
+      </li>
+    
+    </ul>
+     <?php $form = ActiveForm::begin();?>
+    <form class="form-inline my-2 my-lg-0">
+      <?=$form->field($model,'q')->textInput(['class'=>'form-control mr-sm-2','type'=>'search','placeholder'=>'Поиск' ,'aria-label'=>'Search','size'=>'50'])->label('')?>
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="float: right;">Поиск</button>
+    </form>
+     <?php ActiveForm::end();?>
+  </div>
+</nav>
+<!--topMenu!-->
+
 <!--Menu!-->
 <div class="container">
   <div class="row">

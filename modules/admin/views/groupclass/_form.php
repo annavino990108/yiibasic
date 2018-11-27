@@ -15,7 +15,7 @@ use app\models\Otdelenie;
     <?php $form = ActiveForm::begin(); ?>
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
-    <?= $form->field($model, 'otdelenie')->dropDownList(ArrayHelper::map(Otdelenie::find()->all(),'name','name'),
+    <?= $form->field($model, 'otd_id')->dropDownList(ArrayHelper::map(Otdelenie::find()->all(),'id','name'),
         ['prompt' => ' ']
     ); ?>
 

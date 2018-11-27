@@ -46,7 +46,7 @@ class News extends \yii\db\ActiveRecord
     {
         return [
           [['description','title'],'required'],
-          [['description','title','content'],'string'],
+          [['description','title','content','teg'],'string'],
           [['date'],'date','format'=>'php:Y-m-d'],
           [['date'],'default','value'=>date('Y-m-d')],
           [['title','file','image'],'string','max'=>255],
@@ -63,6 +63,7 @@ class News extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'title' => 'Title',
+            'teg'=>'Teg',
             'description' => 'Description',
             'content' => 'Content',
             'imageFile' => 'Image',

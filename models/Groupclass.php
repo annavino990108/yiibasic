@@ -27,7 +27,7 @@ class Groupclass extends \yii\db\ActiveRecord
     {
         return [
             [['name'], 'required'],
-            [['name','otdelenie'], 'string', 'max' => 50],
+            [['name','otd_id'], 'string', 'max' => 50],
         ];
     }
 
@@ -39,7 +39,7 @@ class Groupclass extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'name' => 'Name',
-            'otdelenie'=>'Otdelenie',
+            'otd_id'=>'Otdelenie',
         ];
     }
 }

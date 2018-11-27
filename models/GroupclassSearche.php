@@ -19,8 +19,7 @@ class GroupclassSearche extends Groupclass
     {
         return [
             [['id'], 'integer'],
-            [['name'], 'safe'],
-            [['otdelenie'], 'safe'],
+            [['name','otd_id'], 'safe'],
         ];
     }
 

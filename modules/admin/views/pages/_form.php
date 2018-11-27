@@ -27,7 +27,7 @@ use app\models\Category;
 
          'editorOptions' => ElFinder::ckeditorOptions('elfinder',[]),
         ]);?>
-
+        
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
     </div>
