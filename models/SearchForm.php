@@ -18,4 +18,4 @@ use yii\base\Model;
  			['q','string']
  		];
  	}
- }
+ } 

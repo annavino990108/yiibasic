@@ -18,6 +18,10 @@ use mihaildev\elfinder\InputFile;
 
     <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
     <?= $form->field($model, 'teg')->textInput(['maxlength' => true]) ?>
+       <?= $form->field($model, 'date')->widget(\yii\jui\DatePicker::class, [
+    'language' => 'ru',
+    'dateFormat' => 'yyyy-MM-dd',
+]) ?>
     
     <?= $form->field($model, 'description')->textarea(['rows' => 6]) ?>
 
@@ -25,11 +29,6 @@ use mihaildev\elfinder\InputFile;
 
          'editorOptions' => ElFinder::ckeditorOptions('elfinder',[]),
         ]); ?>
-
-    <?= $form->field($model, 'date')->widget(\yii\jui\DatePicker::class, [
-    'language' => 'ru',
-    'dateFormat' => 'yyyy-MM-dd',
-]) ?>
   
 
    <!-- <?= $form->field($model, 'imageFile')->fileInput()?>!-->
@@ -55,7 +54,7 @@ use mihaildev\elfinder\InputFile;
   <?= $form->field($model, 'public')->radioList([1 => 'yes', 0 => 'No'])->label('Опубликовать'); ?>
 
     <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+        <?= Html::submitButton('Сохранить', ['class' => 'btn btn-success']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

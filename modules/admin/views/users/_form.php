@@ -22,7 +22,10 @@ use mihaildev\elfinder\InputFile;
 
     <?= $form->field($model, 'auth_key')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'role')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'role')->dropDownList([
+    'Администратор' => 'Администратор',
+    'Редактор' => 'Редактор',
+]);?>
 
     <?= $form->field($model, 'img')->widget(InputFile::className(), [
     'language'      => 'ru',
@@ -37,7 +40,7 @@ use mihaildev\elfinder\InputFile;
     <?= $form->field($model, 'email')->textInput(['maxlength' => true]) ?>
 
     <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+        <?= Html::submitButton('Сохранить', ['class' => 'btn btn-success']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

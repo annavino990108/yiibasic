@@ -37,18 +37,15 @@ $this->params['breadcrumbs'][] = $this->title;
         <div class="col-md-3 left_col">
             <div class="left_col scroll-view">
 
-                <div class="navbar nav_title" style="border: 0;">
-                    <a href="/" class="site_title"><i class="fa fa-paw"></i> <span>Gentellela Alela!</span></a>
-                </div>
                 <div class="clearfix"></div>
 
                 <!-- menu prile quick info -->
                 <div class="profile">
                     <div class="profile_pic">
-                        <img src="http://placehold.it/128x128" alt="..." class="img-circle profile_img">
+                        <img src="<?=Yii::$app->user->identity->img ?>" alt="..." class="img-circle profile_img">
                     </div>
                     <div class="profile_info">
-                        <span>Welcome,</span>
+                        <span><?=Yii::$app->user->identity->role ?></span>
                         <h2><?=Yii::$app->user->identity->name ?></h2>
                     </div>
                 </div>
@@ -60,14 +57,15 @@ $this->params['breadcrumbs'][] = $this->title;
                 <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
 
                     <div class="menu_section">
-                        <h3>General</h3>
+                        <h2>Меню</h2>
+
                         <?=
                         \yiister\gentelella\widgets\Menu::widget(
                             [
                                 "items" => [
-                                    ["label" => "Home", "url" => "/", "icon" => "home"],
+                                    ["label" => "Сайт", "url" => "/", "icon" => "home"],
                                     ["label" => "Главная", "url" => ["/admin/default/index"], "icon" => "files-o"],
-                                    ["label" => "Пользователи", "url" => ["/admin/users/index"], "icon" => "files-o"],
+                    
                                     ["label" => "Новости", "url" => ["/admin/news/index"], "icon" => "files-o"],
                                     
                                       [
@@ -94,6 +92,15 @@ $this->params['breadcrumbs'][] = $this->title;
                             ]
                         )
                         ?>
+
+                        <?php if(Yii::$app->user->identity->role=='Администратор') { ?>
+                        <?= \yiister\gentelella\widgets\Menu::widget(
+                            ["items"=>[
+                            ["label" => "Пользователи", "url" => ["/admin/users/index"], "icon" => "files-o"],
+                        ]]
+                        )?>
+                        <?php } ?>
+                
                     </div>
 
                 </div>
@@ -113,7 +120,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     <ul class="nav navbar-nav navbar-right">
                         <li class="">
                             <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                <img src="http://placehold.it/128x128" alt=""><?=Yii::$app->user->identity->name?>
+                                <!--<img src="<?=Yii::$app->user->identity->img?>" alt="">!--><?=Yii::$app->user->identity->name?>
                                 <span class=" fa fa-angle-down"></span>
                             </a>
                             <ul class="dropdown-menu dropdown-usermenu pull-right">
