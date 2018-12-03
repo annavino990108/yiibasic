@@ -12,7 +12,8 @@
         "irc": "irc://irc.freenode.net/yii",
         "source": "https://github.com/yiisoft/yii2"
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "require": {
         "php": ">=5.4.0",
         "yiisoft/yii2": "~2.0.14",
@@ -20,6 +21,7 @@
         "yiisoft/yii2-swiftmailer": "~2.0.0",
         "ilopx/yii2-basic-htaccess": "^1.0",
         "mihaildev/yii2-ckeditor": "*",
+        "iutbay/yii2-kcfinder" : "dev-master",
         "mihaildev/yii2-elfinder": "*",
         "yiister/yii2-gentelella": "~1.0",
         "costa-rico/yii2-images":"dev-master"

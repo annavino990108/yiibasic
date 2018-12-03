@@ -22,6 +22,7 @@ $this->params['breadcrumbs'][] = $this->title;
 	</div>
 </div>
 <hr/>
+<a href="https://docs.google.com/spreadsheets/d/1Az7Vu6TmEl6MJxsW2sFPBnC6V50Lbrw1XsezNuZRPqM/edit#gid=2117270450">Расписание</a>
 <h2>Последнии публикации</h2>
 	<table>
 		<?php if(!empty($news)): ?>

@@ -4,7 +4,8 @@ use yii\helpers\Html;
 $this->title = 'КЭТ имени Ф.В. Чижова';
 ?>
 <h1>Расписание</h1>
-<div class="accordion" id="accordionExample">
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT7Ny-3fTdqqQsmgSlYTKEZg2_u_w_Yf9IMbbEqg5e2wEolh7v5fZoWdAibDzhYIXViGzQFttHeL_Ia/pubhtml?gid=2117270450&amp;single=true&amp;widget=true&amp;headers=false" width="100%" height="500px"></iframe>
+<!--<div class="accordion" id="accordionExample">
 <?php if(!empty($timetable)): ?>
   <?php foreach ($timetable as $ras):?>
 
@@ -23,4 +24,4 @@ $this->title = 'КЭТ имени Ф.В. Чижова';
   td {
     padding: 5px;
 }
-</style> 
+</style> !-->

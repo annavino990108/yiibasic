@@ -80,6 +80,9 @@ $model = new SearchForm();
       <li class="nav-item" style="font-family: Arial; font-size: 15px;">
         <a class="nav-link" href="/timetable/index" style="color: #007BFF;">Расписание</a>
       </li>
+      <li class="nav-item" style="font-family: Arial; font-size: 15px;">
+        <a class="nav-link" href="http://194.58.188.104/" style="color: #007BFF;">Moodle3</a>
+      </li>
     
     </ul>
      <?php $form = ActiveForm::begin();?>

@@ -78,7 +78,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                             
                                         ],
                                     ],
-                                       [
+                                       /*[
                                         "label" => "Расписание",
                                         "icon" => "th",
                                         "url" => "#",
@@ -87,7 +87,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                             ["label" => "Группы", "url" => ["/admin/groupclass/index"]],
                                             
                                         ],
-                                    ],
+                                    ],*/
                                 ],
                             ]
                         )
