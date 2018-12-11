@@ -30,6 +30,7 @@ $this->params['breadcrumbs'][] = $this->title;
           <tr>
           	<td class="col-md-2"><?= $post->date?></td>
           	<td><a href="<?= \yii\helpers\Url::to(['/admin/news/view','id'=>$post['id']])?>"><?= $post->title?></a></td>
+          	<td><a href="<?= \yii\helpers\Url::to(['/admin/news/view','id'=>$post['id']])?>"><?= $post->public?></a></td>
           </tr>
   <?php endforeach; ?>
 <?php endif; ?>

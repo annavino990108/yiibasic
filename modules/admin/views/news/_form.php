@@ -51,7 +51,7 @@ use mihaildev\elfinder\InputFile;
     'buttonOptions' => ['class' => 'btn btn-default'],
     'multiple'      => false       // возможность выбора нескольких файлов
 ]);?>
-  <?= $form->field($model, 'public')->radioList([1 => 'yes', 0 => 'No'])->label('Опубликовать'); ?>
+  <?= $form->field($model, 'public')->radioList([Опубликовано => 'yes', _ => 'No'])->label('Опубликовать'); ?>
 
     <div class="form-group">
         <?= Html::submitButton('Сохранить', ['class' => 'btn btn-success']) ?>

@@ -12,6 +12,7 @@ use app\models\LoginForm;
 use app\models\ContactForm;
 use app\models\News;
 use app\models\SearchForm;
+use app\models\Prepodavatel;
 use yii\data\Pagination;
 
 
@@ -143,6 +144,21 @@ class SiteController extends Controller
     {
         return $this->render('about');
     }
+     public function actionPrepod()
+    {
+    $query = Prepodavatel::find();
+  $countQuery = clone $query;
+    $pages = new Pagination(['totalCount' => $countQuery->count(),'pageSize' => 10]);
+    $models = $query->offset($pages->offset)
+        ->limit($pages->limit)
+        ->all();
+
+    return $this->render('prepod', [
+         'models' => $models,
+        'pages' => $pages,
+    ]);
+}
+
 
     public function actionSearch()
     {

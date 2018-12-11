@@ -75,6 +75,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                         "items" => [
                                             ["label" => "Категории", "url" => ["/admin/category/index"]],
                                             ["label" => "Страницы", "url" => ["/admin/pages/index"]],
+                                            ["label" => "Преподаватели", "url" => ["/admin/prepodavatel/index"]],
                                             
                                         ],
                                     ],

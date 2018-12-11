@@ -5,12 +5,12 @@ namespace app\models;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\models\Otdelenie;
+use app\models\Prepodavatel;
 
 /**
- * OtdelenieSearche represents the model behind the search form of `app\models\Otdelenie`.
+ * PrepodavatelSearche represents the model behind the search form of `app\models\Prepodavatel`.
  */
-class OtdelenieSearche extends Otdelenie
+class PrepodavatelSearche extends Prepodavatel
 {
     /**
      * {@inheritdoc}
@@ -19,7 +19,7 @@ class OtdelenieSearche extends Otdelenie
     {
         return [
             [['id'], 'integer'],
-            [['name'], 'safe'],
+            [['name', 'image', 'level', 'qualification', 'experience', 'position', 'dateat'], 'safe'],
         ];
     }
 
@@ -41,7 +41,7 @@ class OtdelenieSearche extends Otdelenie
      */
     public function search($params)
     {
-        $query = Otdelenie::find();
+        $query = Prepodavatel::find();
 
         // add conditions that should always apply here
 
@@ -62,7 +62,13 @@ class OtdelenieSearche extends Otdelenie
             'id' => $this->id,
         ]);
 
-        $query->andFilterWhere(['like', 'name', $this->name]);
+        $query->andFilterWhere(['like', 'name', $this->name])
+            ->andFilterWhere(['like', 'image', $this->image])
+            ->andFilterWhere(['like', 'level', $this->level])
+            ->andFilterWhere(['like', 'qualification', $this->qualification])
+            ->andFilterWhere(['like', 'experience', $this->experience])
+            ->andFilterWhere(['like', 'position', $this->position])
+            ->andFilterWhere(['like', 'dateat', $this->dateat]);
 
         return $dataProvider;
     }

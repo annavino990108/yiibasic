@@ -81,6 +81,9 @@ $model = new SearchForm();
         <a class="nav-link" href="/timetable/index" style="color: #007BFF;">Расписание</a>
       </li>
       <li class="nav-item" style="font-family: Arial; font-size: 15px;">
+        <a class="nav-link" href="/site/prepod" style="color: #007BFF;">Преподаватели</a>
+      </li>
+      <li class="nav-item" style="font-family: Arial; font-size: 15px;">
         <a class="nav-link" href="http://194.58.188.104/" style="color: #007BFF;">Moodle3</a>
       </li>
     

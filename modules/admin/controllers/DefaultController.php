@@ -16,7 +16,7 @@ class DefaultController extends AppAdminController
      */
     public function actionIndex()
     {
-    	$news=News::find()->limit(5)->where(['public' => 1])->all();
+    	$news=News::find()->limit(5)->all();
     	//debug($news);
         return $this->render('index',compact('news'));
         return $this->render('index');

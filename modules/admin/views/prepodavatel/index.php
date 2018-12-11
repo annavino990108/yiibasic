@@ -4,19 +4,19 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
-/* @var $searchModel app\models\GroupclassSearche */
+/* @var $searchModel app\models\PrepodavatelSearche */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Groupclasses';
+$this->title = 'Prepodavatels';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="groupclass-index">
+<div class="prepodavatel-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Groupclass', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Create Prepodavatel', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([
@@ -27,7 +27,12 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'id',
             'name',
-            'otd_id',
+            'image',
+            'level',
+            //'qualification',
+            //'experience',
+            //'position',
+            //'dateat',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
