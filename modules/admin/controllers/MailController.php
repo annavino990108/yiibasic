@@ -3,16 +3,16 @@
 namespace app\modules\admin\controllers;
 
 use Yii;
-use app\models\Prepodavatel;
-use app\models\PrepodavatelSearche;
+use app\models\Mail;
+use app\models\MailSearche;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * PrepodavatelController implements the CRUD actions for Prepodavatel model.
+ * MailController implements the CRUD actions for Mail model.
  */
-class PrepodavatelController extends Controller
+class MailController extends Controller
 {
     /**
      * {@inheritdoc}
@@ -30,12 +30,12 @@ class PrepodavatelController extends Controller
     }
 
     /**
-     * Lists all Prepodavatel models.
+     * Lists all Mail models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new PrepodavatelSearche();
+        $searchModel = new MailSearche();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -45,7 +45,7 @@ class PrepodavatelController extends Controller
     }
 
     /**
-     * Displays a single Prepodavatel model.
+     * Displays a single Mail model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -58,13 +58,13 @@ class PrepodavatelController extends Controller
     }
 
     /**
-     * Creates a new Prepodavatel model.
+     * Creates a new Mail model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Prepodavatel();
+        $model = new Mail();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -76,7 +76,7 @@ class PrepodavatelController extends Controller
     }
 
     /**
-     * Updates an existing Prepodavatel model.
+     * Updates an existing Mail model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -96,7 +96,7 @@ class PrepodavatelController extends Controller
     }
 
     /**
-     * Deletes an existing Prepodavatel model.
+     * Deletes an existing Mail model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -110,15 +110,15 @@ class PrepodavatelController extends Controller
     }
 
     /**
-     * Finds the Prepodavatel model based on its primary key value.
+     * Finds the Mail model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Prepodavatel the loaded model
+     * @return Mail the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Prepodavatel::findOne($id)) !== null) {
+        if (($model = Mail::findOne($id)) !== null) {
             return $model;
         }
 

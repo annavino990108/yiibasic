@@ -39,14 +39,15 @@ class NewsController extends AppAdminController
      * @return mixed
      */
     public function actionIndex()
-    {
+    {  $user=Yii::$app->user->identity->role;
+        if($user!=Пользователь){
         $searchModel = new NewsSearche();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
-        ]);
+        ]);}
     }
 
     /**
@@ -56,10 +57,11 @@ class NewsController extends AppAdminController
      * @throws NotFoundHttpException if the model cannot be found
      */
     public function actionView($id)
-    {
+    {  $user=Yii::$app->user->identity->role;
+        if($user!=Пользователь){
         return $this->render('view', [
             'model' => $this->findModel($id),
-        ]);
+        ]);}
     }
 
     /**
@@ -68,7 +70,8 @@ class NewsController extends AppAdminController
      * @return mixed
      */
     public function actionCreate()
-    {
+    {  $user=Yii::$app->user->identity->role;
+        if($user!=Пользователь){
         $model = new News();
 
         if ($model->load(Yii::$app->request->post()) && $model->save())
@@ -83,7 +86,7 @@ class NewsController extends AppAdminController
 
         return $this->render('create', [
             'model' => $model,
-        ]);
+        ]);}
     }
 
     /**
@@ -94,7 +97,8 @@ class NewsController extends AppAdminController
      * @throws NotFoundHttpException if the model cannot be found
      */
     public function actionUpdate($id)
-    {
+    {  $user=Yii::$app->user->identity->role;
+        if($user!=Пользователь){
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -112,7 +116,7 @@ class NewsController extends AppAdminController
             return $this->render('update', [
                 'model' => $model,
             ]);
-        }
+        }}
     }
 
     /**
@@ -123,10 +127,11 @@ class NewsController extends AppAdminController
      * @throws NotFoundHttpException if the model cannot be found
      */
     public function actionDelete($id)
-    {
+    {  $user=Yii::$app->user->identity->role;
+        if($user!=Пользователь){
         $this->findModel($id)->delete();
 
-        return $this->redirect(['index']);
+        return $this->redirect(['index']);}
     }
 
     /**
@@ -137,11 +142,12 @@ class NewsController extends AppAdminController
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
-    {
+    {  $user=Yii::$app->user->identity->role;
+        if($user!=Пользователь){
         if (($model = News::findOne($id)) !== null) {
             return $model;
         }
 
         throw new NotFoundHttpException('The requested page does not exist.');
-    }
+    }}
 }

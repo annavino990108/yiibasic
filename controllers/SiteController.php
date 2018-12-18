@@ -9,6 +9,7 @@ use yii\web\Response;
 use yii\filters\VerbFilter;
 use yii\helpers\Html;
 use app\models\LoginForm;
+use app\models\Users;
 use app\models\ContactForm;
 use app\models\News;
 use app\models\SearchForm;
@@ -78,7 +79,7 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        $news=News::find()->limit(3)->where(['public' => 1])->all();
+        $news=News::find()->limit(3)->where(['public' => Опубликовано])->all();
         return $this->render('index',compact('news'));
         return $this->render('index');
     }
@@ -124,15 +125,22 @@ class SiteController extends Controller
      */
     public function actionContact()
     {
+
+
         $model = new ContactForm();
-        if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
-            Yii::$app->session->setFlash('contactFormSubmitted');
+        if ($model->load(Yii::$app->request->post()) && $model->validate()){
+            if($model->contact(Yii::$app->params['adminEmail'])) {
+            Yii::$app->session->setFlash('success','Thank you for contacting us');
+        }else{
+            Yii::$app->session->setFlash('error','There was an error sending email');
+        }
 
             return $this->refresh();
-        }
+        }else{
         return $this->render('contact', [
             'model' => $model,
         ]);
+    }
     }
 
     /**
@@ -175,5 +183,18 @@ class SiteController extends Controller
          'q'=>$q,
     ]);
 
+    }
+
+    public function actionRegistration()
+    {
+      $model = new Users();
+
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->refresh();
+        }else{
+
+        return $this->render('registration', [
+            'model' => $model,
+        ]);}
     }
 }

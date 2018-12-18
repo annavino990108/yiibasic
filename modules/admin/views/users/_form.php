@@ -25,6 +25,7 @@ use mihaildev\elfinder\InputFile;
     <?= $form->field($model, 'role')->dropDownList([
     'Администратор' => 'Администратор',
     'Редактор' => 'Редактор',
+    'Пользователь'=>'Пользователь',
 ]);?>
 
     <?= $form->field($model, 'img')->widget(InputFile::className(), [
@@ -40,6 +41,7 @@ use mihaildev\elfinder\InputFile;
     <?= $form->field($model, 'email')->textInput(['maxlength' => true]) ?>
 
     <div class="form-group">
+        <?=Yii::$app->getSecurity()->generatePasswordHash($model->password);?>
         <?= Html::submitButton('Сохранить', ['class' => 'btn btn-success']) ?>
     </div>
 

@@ -35,6 +35,8 @@ class UsersController extends AppAdminController
      */
     public function actionIndex()
     {
+        $user=Yii::$app->user->identity->role;
+        if($user==Администратор){
         $searchModel = new UsersSearche();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
@@ -42,6 +44,7 @@ class UsersController extends AppAdminController
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
+    }
     }
 
     /**
@@ -52,9 +55,11 @@ class UsersController extends AppAdminController
      */
     public function actionView($id)
     {
+        $user=Yii::$app->user->identity->role;
+        if($user==Администратор){
         return $this->render('view', [
             'model' => $this->findModel($id),
-        ]);
+        ]);}
     }
 
     /**
@@ -64,6 +69,8 @@ class UsersController extends AppAdminController
      */
     public function actionCreate()
     {
+        $user=Yii::$app->user->identity->role;
+        if($user==Администратор){
         $model = new Users();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -72,7 +79,7 @@ class UsersController extends AppAdminController
 
         return $this->render('create', [
             'model' => $model,
-        ]);
+        ]);}
     }
 
     /**
@@ -83,7 +90,8 @@ class UsersController extends AppAdminController
      * @throws NotFoundHttpException if the model cannot be found
      */
     public function actionUpdate($id)
-    {
+    {$user=Yii::$app->user->identity->role;
+        if($user==Администратор){
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -93,7 +101,7 @@ class UsersController extends AppAdminController
         return $this->render('update', [
             'model' => $model,
         ]);
-    }
+    }}
 
     /**
      * Deletes an existing Users model.
@@ -103,11 +111,12 @@ class UsersController extends AppAdminController
      * @throws NotFoundHttpException if the model cannot be found
      */
     public function actionDelete($id)
-    {
+    {$user=Yii::$app->user->identity->role;
+        if($user==Администратор){
         $this->findModel($id)->delete();
 
         return $this->redirect(['index']);
-    }
+    }}
 
     /**
      * Finds the Users model based on its primary key value.
@@ -117,11 +126,12 @@ class UsersController extends AppAdminController
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
-    {
+    {$user=Yii::$app->user->identity->role;
+        if($user==Администратор){
         if (($model = Users::findOne($id)) !== null) {
             return $model;
         }
 
         throw new NotFoundHttpException('The requested page does not exist.');
-    }
+    }}
 }

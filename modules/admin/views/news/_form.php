@@ -42,7 +42,7 @@ use mihaildev\elfinder\InputFile;
     'multiple'      => false       // возможность выбора нескольких файлов
 ]); ?>
 
-    <?= $form->field($model, 'file')->widget(InputFile::className(), [
+    <?php /* $form->field($model, 'file')->widget(InputFile::className(), [
     'language'      => 'ru',
     'controller'    => 'elfinder', // вставляем название контроллера, по умолчанию равен elfinder
     'filter'        => 'image',    // фильтр файлов, можно задать массив фильтров https://github.com/Studio-42/elFinder/wiki/Client-configuration-options#wiki-onlyMimes
@@ -50,8 +50,8 @@ use mihaildev\elfinder\InputFile;
     'options'       => ['class' => 'form-control'],
     'buttonOptions' => ['class' => 'btn btn-default'],
     'multiple'      => false       // возможность выбора нескольких файлов
-]);?>
-  <?= $form->field($model, 'public')->radioList([Опубликовано => 'yes', _ => 'No'])->label('Опубликовать'); ?>
+]);*/?>
+  <?= $form->field($model, 'public')->radioList([Опубликовано => 'Да', _ => 'Нет'])->label('Опубликовать'); ?>
 
     <div class="form-group">
         <?= Html::submitButton('Сохранить', ['class' => 'btn btn-success']) ?>

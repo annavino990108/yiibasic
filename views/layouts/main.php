@@ -57,7 +57,7 @@ $model = new SearchForm();
         <?php echo Nav::widget(['items' => [Yii::$app->user->isGuest ? (
                 ['label' => 'Login', 'url' => ['/admin']]
             ) : (
-                ['label' => 'Admin', 'url' => ['/admin']]
+                ['label' => Yii::$app->user->identity->name , 'url' => ['/admin']]
             )],])?>
           
       </div>
@@ -81,12 +81,11 @@ $model = new SearchForm();
         <a class="nav-link" href="/timetable/index" style="color: #007BFF;">Расписание</a>
       </li>
       <li class="nav-item" style="font-family: Arial; font-size: 15px;">
-        <a class="nav-link" href="/site/prepod" style="color: #007BFF;">Преподаватели</a>
-      </li>
-      <li class="nav-item" style="font-family: Arial; font-size: 15px;">
         <a class="nav-link" href="http://194.58.188.104/" style="color: #007BFF;">Moodle3</a>
       </li>
-    
+      <li class="nav-item" style="font-family: Arial; font-size: 15px;">
+        <a class="nav-link" href="/site/registration" style="color: #007BFF;">Регистрация</a>
+      </li>
     </ul>
      <?php $form = ActiveForm::begin();?>
     <form class="form-inline my-2 my-lg-0">

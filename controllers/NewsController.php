@@ -11,7 +11,7 @@ class NewsController extends SiteController
 
     public function actionIndex()
     {
-        $query = News::find()->where(['public' => 1]);
+        $query = News::find()->where(['public' => Опубликовано]);
     $countQuery = clone $query;
     $pages = new Pagination(['totalCount' => $countQuery->count(),'pageSize' => 1]);
     $models = $query->offset($pages->offset)
@@ -28,7 +28,7 @@ class NewsController extends SiteController
 
     public function actionView($id)
     {
-       $news=News::findOne($id)->where(['public' => 1]);
+       $news=News::findOne($id);
 
        return $this->render('single',['news'=>$news]);
     }

@@ -58,14 +58,19 @@ $this->params['breadcrumbs'][] = $this->title;
 
                     <div class="menu_section">
                         <h2>Меню</h2>
-
+                        <?= \yiister\gentelella\widgets\Menu::widget(
+                            ["items"=>[
+                                 ["label" => "Сайт", "url" => "/", "icon" => "home"],
+                                    ["label" => "Главная", "url" => ["/admin/default/index"], "icon" => "files-o"],
+                    
+                            ["label" => "Почта", "url" => ["/admin/mail/index"], "icon" => "files-o"],
+                        ]]
+                        )?>
+                        <?php if(Yii::$app->user->identity->role!='Пользователь') { ?>
                         <?=
                         \yiister\gentelella\widgets\Menu::widget(
                             [
                                 "items" => [
-                                    ["label" => "Сайт", "url" => "/", "icon" => "home"],
-                                    ["label" => "Главная", "url" => ["/admin/default/index"], "icon" => "files-o"],
-                    
                                     ["label" => "Новости", "url" => ["/admin/news/index"], "icon" => "files-o"],
                                     
                                       [
@@ -75,7 +80,6 @@ $this->params['breadcrumbs'][] = $this->title;
                                         "items" => [
                                             ["label" => "Категории", "url" => ["/admin/category/index"]],
                                             ["label" => "Страницы", "url" => ["/admin/pages/index"]],
-                                            ["label" => "Преподаватели", "url" => ["/admin/prepodavatel/index"]],
                                             
                                         ],
                                     ],
@@ -93,6 +97,7 @@ $this->params['breadcrumbs'][] = $this->title;
                             ]
                         )
                         ?>
+                        <?php } ?>
 
                         <?php if(Yii::$app->user->identity->role=='Администратор') { ?>
                         <?= \yiister\gentelella\widgets\Menu::widget(
@@ -101,6 +106,8 @@ $this->params['breadcrumbs'][] = $this->title;
                         ]]
                         )?>
                         <?php } ?>
+
+                        
                 
                     </div>
 

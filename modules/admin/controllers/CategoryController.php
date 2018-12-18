@@ -12,11 +12,13 @@ use yii\filters\VerbFilter;
 /**
  * CategoryController implements the CRUD actions for Category model.
  */
+
 class CategoryController extends Controller
 {
     /**
      * {@inheritdoc}
      */
+
     public function behaviors()
     {
         return [
@@ -35,13 +37,15 @@ class CategoryController extends Controller
      */
     public function actionIndex()
     {
+        $user=Yii::$app->user->identity->role;
+        if($user!=Пользователь){
         $searchModel = new CategorySearche();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
-        ]);
+        ]);}
     }
 
     /**
@@ -52,13 +56,15 @@ class CategoryController extends Controller
      */
     public function actionView($id)
     {
+          $user=Yii::$app->user->identity->role;
+        if($user!=Пользователь){
         /*$id=Yii::$app->request->get('id');
         debug($id);
        $pages=Pages::find()->where(['category_id'=>$id])->all();
        return $this->render('view',compact('pages'));*/
        return $this->render('view', [
             'model' => $this->findModel($id),
-        ]);
+        ]);}
     }
 
     /**
@@ -67,7 +73,8 @@ class CategoryController extends Controller
      * @return mixed
      */
     public function actionCreate()
-    {
+    {  $user=Yii::$app->user->identity->role;
+        if($user!=Пользователь){
         $model = new Category();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -76,7 +83,7 @@ class CategoryController extends Controller
 
         return $this->render('create', [
             'model' => $model,
-        ]);
+        ]);}
     }
 
     /**
@@ -87,7 +94,8 @@ class CategoryController extends Controller
      * @throws NotFoundHttpException if the model cannot be found
      */
     public function actionUpdate($id)
-    {
+    {  $user=Yii::$app->user->identity->role;
+        if($user!=Пользователь){
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -96,7 +104,7 @@ class CategoryController extends Controller
 
         return $this->render('update', [
             'model' => $model,
-        ]);
+        ]);}
     }
 
     /**
@@ -107,10 +115,11 @@ class CategoryController extends Controller
      * @throws NotFoundHttpException if the model cannot be found
      */
     public function actionDelete($id)
-    {
+    {  $user=Yii::$app->user->identity->role;
+        if($user!=Пользователь){
         $this->findModel($id)->delete();
 
-        return $this->redirect(['index']);
+        return $this->redirect(['index']);}
     }
 
     /**
@@ -122,10 +131,12 @@ class CategoryController extends Controller
      */
     protected function findModel($id)
     {
+          $user=Yii::$app->user->identity->role;
+        if($user!=Пользователь){
         if (($model = Category::findOne($id)) !== null) {
             return $model;
         }
 
         throw new NotFoundHttpException('The requested page does not exist.');
-    }
+    }}
 }
