@@ -5,6 +5,7 @@ use yii\widgets\ActiveForm;
 use mihaildev\ckeditor\CKEditor;
 use mihaildev\elfinder\ElFinder ; 
 use mihaildev\elfinder\InputFile;
+//use iutbay\yii2kcfinder\KCFinderInputWidget;
 
 
 
@@ -40,7 +41,9 @@ use mihaildev\elfinder\InputFile;
     'options'       => ['class' => 'form-control'],
     'buttonOptions' => ['class' => 'btn btn-default'],
     'multiple'      => false       // возможность выбора нескольких файлов
-]); ?>
+]);/*widget(KCFinderInputWidget::className(), [
+    'multiple' => true,
+]);*/?>
 
     <?php /* $form->field($model, 'file')->widget(InputFile::className(), [
     'language'      => 'ru',

@@ -26,7 +26,7 @@ $this->params['breadcrumbs'][] = $this->title;
 <hr/>
 
 <?php if(Yii::$app->user->identity->role!='Пользователь') { ?>
-<a href="https://docs.google.com/spreadsheets/d/1Az7Vu6TmEl6MJxsW2sFPBnC6V50Lbrw1XsezNuZRPqM/edit#gid=2117270450">Расписание</a>
+<a href="https://docs.google.com/spreadsheets/d/1Az7Vu6TmEl6MJxsW2sFPBnC6V50Lbrw1XsezNuZRPqM/edit#gid=2117270450"><h2>Расписание</h2></a>
 <h2>Последнии публикации</h2>
 	<table>
 		<?php if(!empty($news)): ?>

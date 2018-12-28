@@ -1,0 +1,5 @@
+Адрес ПУА: https://cp.beget.com
+Имя пользователя: i99978ug
+Пароль: VbUmWJfZ
+Сервер: free3
+http://yii/web/index.php?r=gii
