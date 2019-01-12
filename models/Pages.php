@@ -34,7 +34,7 @@ class Pages extends \yii\db\ActiveRecord
         return [
             [['title', 'category_id', 'content'], 'required'],
             [['category_id'], 'integer'],
-            [['content'], 'string'],
+            [['content','filename','file'], 'string'],
             [['title'], 'string', 'max' => 255],
         ];
     }
@@ -49,6 +49,8 @@ class Pages extends \yii\db\ActiveRecord
             'title' => 'Заголовок',
             'category_id' => 'Категория',
             'content' => 'Содержание',
+            'filename'=>'Название файла',
+            'file'=>'Файл',
         ];
     }
 }

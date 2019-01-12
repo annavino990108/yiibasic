@@ -20,7 +20,12 @@ $this->params['breadcrumbs'][] = $this->title;
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <?= Html::csrfMetaTags() ?>
-    <title><?= Html::encode($this->title='Admin') ?></title>
+    <?php if(Yii::$app->user->identity->role!='Пользователь') { ?> 
+        <title><?= Html::encode($this->title='Admin') ?></title>
+    <?php } ?>
+    <?php if(Yii::$app->user->identity->role =='Пользователь') {  ?>
+        <title><?= Html::encode($this->title='Личный кабинет') ?></title>
+    <?php } ?>
     <?php $this->head() ?>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -58,19 +63,13 @@ $this->params['breadcrumbs'][] = $this->title;
 
                     <div class="menu_section">
                         <h2>Меню</h2>
-                        <?= \yiister\gentelella\widgets\Menu::widget(
-                            ["items"=>[
-                                 ["label" => "Сайт", "url" => "/", "icon" => "home"],
-                                    ["label" => "Главная", "url" => ["/admin/default/index"], "icon" => "files-o"],
-                    
-                            ["label" => "Почта", "url" => ["/admin/mail/index"], "icon" => "files-o"],
-                        ]]
-                        )?>
                         <?php if(Yii::$app->user->identity->role!='Пользователь') { ?>
                         <?=
                         \yiister\gentelella\widgets\Menu::widget(
                             [
                                 "items" => [
+                                        ["label" => "Сайт", "url" => "/", "icon" => "home"],
+                                    ["label" => "Главная", "url" => ["/admin/default/index"], "icon" => "files-o"],
                                     ["label" => "Новости", "url" => ["/admin/news/index"], "icon" => "files-o"],
                                     
                                       [
@@ -83,16 +82,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                             
                                         ],
                                     ],
-                                       /*[
-                                        "label" => "Расписание",
-                                        "icon" => "th",
-                                        "url" => "#",
-                                        "items" => [
-                                            ["label" => "Расписание", "url" => ["/admin/timetable/index"]],
-                                            ["label" => "Группы", "url" => ["/admin/groupclass/index"]],
-                                            
-                                        ],
-                                    ],*/
+ 
                                 ],
                             ]
                         )

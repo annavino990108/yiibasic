@@ -25,6 +25,7 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'content') ?>
 
     <?= $form->field($model, 'image') ?>
+    <?= $form->field($model, 'filename') ?>
 
     <?= $form->field($model, 'file') ?>
     <?= $form->field($model, 'public') ?>

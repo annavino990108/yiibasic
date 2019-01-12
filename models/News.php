@@ -49,7 +49,7 @@ class News extends \yii\db\ActiveRecord
           [['description','title','content','teg'],'string'],
           [['date'],'date','format'=>'php:Y-m-d'],
           [['date'],'default','value'=>date('Y-m-d')],
-          [['title','file','image'],'string','max'=>255],
+          [['title','file','image','filename'],'string','max'=>255],
           [['imageFile'], 'file', 'extensions' => 'png, jpg,jpeg'],
           [['public'],'string','max'=>50],
         ];
@@ -67,7 +67,8 @@ class News extends \yii\db\ActiveRecord
             'description' => 'Описание',
             'content' => 'Текст',
             'image' => 'Изображение',
-            'file' => 'File',
+            'filename'=>'Название файла',
+            'file' => 'Файл',
             'date' => 'Дата',
         ];
     }

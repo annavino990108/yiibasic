@@ -41,7 +41,6 @@ use mihaildev\elfinder\InputFile;
     <?= $form->field($model, 'email')->textInput(['maxlength' => true]) ?>
 
     <div class="form-group">
-        <?=Yii::$app->getSecurity()->generatePasswordHash($model->password);?>
         <?= Html::submitButton('Сохранить', ['class' => 'btn btn-success']) ?>
     </div>
 

@@ -27,6 +27,22 @@ use app\models\Category;
 
          'editorOptions' => ElFinder::ckeditorOptions('elfinder',[]),
         ]);?>
+        <div class="row">
+        <div class="col-md-4">
+    <?= $form->field($model, 'filename')->textInput(['maxlength' => true]) ?>
+    </div>
+    <div class="col-md-4">
+    <?=$form->field($model, 'file')->widget(InputFile::className(), [
+    'language'      => 'ru',
+    'controller'    => 'elfinder', // вставляем название контроллера, по умолчанию равен elfinder
+    //'filter'        => 'image',    // фильтр файлов, можно задать массив фильтров https://github.com/Studio-42/elFinder/wiki/Client-configuration-options#wiki-onlyMimes
+    'template'      => '<div class="input-group">{input}<span class="input-group-btn">{button}</span></div>',
+    'options'       => ['class' => 'form-control'],
+    'buttonOptions' => ['class' => 'btn btn-default'],
+    'multiple'      => false       // возможность выбора нескольких файлов
+]);?>
+</div>
+</div>
         
     <div class="form-group">
         <?= Html::submitButton('Сохранить', ['class' => 'btn btn-success']) ?>

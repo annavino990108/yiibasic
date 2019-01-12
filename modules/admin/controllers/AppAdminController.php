@@ -16,7 +16,7 @@ class AppAdminController extends Controller
                 'rules' => [
                     [
                         'allow' => true,
-                       // 'actions' => ['logout'],
+                       //'actions' => ['logout'],
                         'roles' => ['@'],
                     ],
                 ],

@@ -46,6 +46,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'format'=>'html',
             ],*/
             'image',
+            'filename',
             'file',
             'date',
             'public',

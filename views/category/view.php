@@ -8,3 +8,6 @@ $this->params['breadcrumbs'][] = $this->title;
 <hr/>
 <h1><?= $pages->title?></h1>
 <p><?=$pages->content?></p>
+<?php if($pages->file!=''){ ?>
+<a href="<?= $pages->file?>" download="" ><img src="/images/file.png"><?= $pages->filename?></a>
+<?php } ?>

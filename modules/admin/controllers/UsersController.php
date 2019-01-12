@@ -19,7 +19,7 @@ class UsersController extends AppAdminController
      */
    /* public function behaviors()
     {
-        return [
+        return [ 
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
@@ -27,7 +27,7 @@ class UsersController extends AppAdminController
                 ],
             ],
         ];
-    }*/
+    }
 
     /**
      * Lists all Users models.
@@ -73,9 +73,12 @@ class UsersController extends AppAdminController
         if($user==Администратор){
         $model = new Users();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post())){
+            $model->password=Yii::$app->getSecurity()->generatePasswordHash($model->password);
+        
+        if ( $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
-        }
+        }}
 
         return $this->render('create', [
             'model' => $model,
@@ -94,9 +97,11 @@ class UsersController extends AppAdminController
         if($user==Администратор){
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+       if ($model->load(Yii::$app->request->post())){
+            $model->password=Yii::$app->getSecurity()->generatePasswordHash($model->password);
+        if ( $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
-        }
+        }}
 
         return $this->render('update', [
             'model' => $model,

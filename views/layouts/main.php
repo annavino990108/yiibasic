@@ -53,11 +53,18 @@ $model = new SearchForm();
       <div class="col">
         <img src="/images/icon5.png" style="float: right;">
       </div>
-        <div class="col" style="font-size: 20px;">
+        <div class="col" style="font-size: 30px;">
         <?php echo Nav::widget(['items' => [Yii::$app->user->isGuest ? (
                 ['label' => 'Login', 'url' => ['/admin']]
             ) : (
-                ['label' => Yii::$app->user->identity->name , 'url' => ['/admin']]
+                '<li>'
+                . Html::beginForm(['/site/logout'], 'post')
+                . Html::submitButton(
+                    'Logout (' . Yii::$app->user->identity->username . ')',
+                    ['class' => 'btn btn-link logout']
+                )
+                . Html::endForm()
+                . '</li>'
             )],])?>
           
       </div>

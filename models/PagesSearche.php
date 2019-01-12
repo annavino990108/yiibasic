@@ -19,7 +19,7 @@ class PagesSearche extends Pages
     {
         return [
             [['id', 'category_id'], 'integer'],
-            [['title', 'content'], 'safe'],
+            [['title', 'content','filename','file'], 'safe'],
         ];
     }
 

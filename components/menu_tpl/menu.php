@@ -18,7 +18,7 @@
 	<style type="text/css">
 		.menu li{
 			font-family: Arial;
-			font-size: 15px;
+			font-size: 12px;
 			list-style: none;
 			float: left;
 			position: relative;
@@ -29,7 +29,7 @@
 		.menu a{
 			text-decoration: none;
 			display: block;
-			padding: 10px 10px;
+			padding: 5px 5px;
 		}
 		#active a, .menu li:hover > a{
 			background:white;
@@ -45,7 +45,7 @@
 			position: relative;
 		}
 		.menu ul a{
-			padding: 16.5px 65px;
+			padding: 5px 5px;
 		}
 
 		.menu li:first-child:hover > ul{
